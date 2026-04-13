@@ -1,218 +1,153 @@
-window.addEventListener("load", function() {
-  const btn = document.getElementById("themeToggler");
-  const html = document.querySelector("html");
-  const primoDiv = document.getElementById("primo-div");
 
- let language = localStorage.getItem("language");
-  if(language===null){
-    language = primoDiv.getAttribute('class');
-  }
-  if(language === "d-block"){
-    italianFunction();
-  }
-  else
-    englishFunction();
-
-  let mode_theme = localStorage.getItem("mode_theme");
-  if (mode_theme === null) {
-    mode_theme = html.getAttribute('data-bs-theme');
-  }
-  if (mode_theme === "dark")
-    enableDarkMode();
-  else
-    enableLightMode();
-
-  btn.addEventListener("click", checkHtmlMode);
-});
-
-function italianFunction() {
-  const primoDiv = document.getElementById("primo-div");
-  const secondoDiv = document.getElementById("secondo-div");
-
-  primoDiv.classList.remove("d-none");
-  secondoDiv.classList.remove("d-block");
-  primoDiv.classList.add("d-block");
-  secondoDiv.classList.add("d-none");
-
-  const language_p = document.getElementById("language_p");
-  language_p.innerText = "IT";
-
-  localStorage.setItem("language", "d-block");
+function getLanguageRoots() {
+  return {
+    it: document.getElementById('primo-div'),
+    en: document.getElementById('secondo-div-en') || document.getElementById('secondo-div')
+  };
 }
 
+function getActiveLanguageRoot() {
+  const roots = getLanguageRoots();
+  if (roots.en && roots.en.classList.contains('d-block')) return roots.en;
+  return roots.it || document;
+}
+
+function setLanguage(mode) {
+  const roots = getLanguageRoots();
+  const languageLabel = document.getElementById('language_p');
+  if (roots.it) {
+    roots.it.classList.toggle('d-none', mode !== 'it');
+    roots.it.classList.toggle('d-block', mode === 'it');
+  }
+  if (roots.en) {
+    roots.en.classList.toggle('d-none', mode !== 'en');
+    roots.en.classList.toggle('d-block', mode === 'en');
+  }
+  if (languageLabel) languageLabel.innerText = mode === 'it' ? 'IT' : 'EN';
+  localStorage.setItem('language', mode === 'it' ? 'd-block' : 'd-none');
+}
+
+function italianFunction() { setLanguage('it'); }
 function englishFunction() {
-  const primoDiv = document.getElementById("primo-div");
-  const secondoDiv = document.getElementById("secondo-div");
-
-  primoDiv.classList.remove("d-block");
-  secondoDiv.classList.remove("d-none");
-  primoDiv.classList.add("d-none");
-  secondoDiv.classList.add("d-block");
-
-  const language_p = document.getElementById("language_p");
-  language_p.innerText = "EN";
-
-  localStorage.setItem("language", "d-none");
+  const roots = getLanguageRoots();
+  if (roots.en) setLanguage('en');
 }
 
 function checkHtmlMode() {
-  const html = document.querySelector("html");
-  if (html.getAttribute('data-bs-theme') == 'light')
-    enableDarkMode();
-  else
-    enableLightMode();
+  const html = document.documentElement;
+  if (html.getAttribute('data-bs-theme') === 'light') enableDarkMode();
+  else enableLightMode();
 }
 
 function enableDarkMode() {
-  const html = document.querySelector("html");
-  const main = document.querySelector("main");
-  const nav = document.querySelector("nav");
-  const footer = document.querySelector("footer");
-  const body = document.querySelector("body");
-  const sun = document.getElementById("sun");
-  const moon = document.getElementById("moon");
-  const title_subscr = document.querySelector("h1");
+  const html = document.documentElement;
+  const main = document.querySelector('main');
+  const nav = document.querySelector('nav');
+  const footer = document.querySelector('footer');
+  const body = document.body;
+  const sun = document.getElementById('sun');
+  const moon = document.getElementById('moon');
+  const title = document.querySelector('h1');
 
   html.setAttribute('data-bs-theme', 'dark');
-  html.style.color = "white";
-  main.style.color = "white";
-  footer.style.color = "white";
-  title_subscr.style.color = "white";
-  html.style.backgroundColor = "#000415";
-  nav.style.backgroundColor = "#101a27";
-  body.style.backgroundColor = "#000415";
-  footer.style.backgroundColor = "#101a27";
-  sun.classList.add("d-none");
-  sun.classList.remove("d-block");
-  moon.classList.add("d-block");
-  moon.classList.remove("d-none");
+  html.style.color = 'white';
+  if (main) main.style.color = 'white';
+  if (title) title.style.color = 'white';
+  if (footer) {
+    footer.style.color = 'white';
+    footer.style.backgroundColor = '#101a27';
+  }
+  if (nav) nav.style.backgroundColor = '#101a27';
+  if (body) body.style.backgroundColor = '#000415';
+  html.style.backgroundColor = '#000415';
+  if (sun) { sun.classList.add('d-none'); sun.classList.remove('d-block'); }
+  if (moon) { moon.classList.add('d-block'); moon.classList.remove('d-none'); }
 
-  localStorage.setItem("mode_theme", "dark");
+  localStorage.setItem('mode_theme', 'dark');
 }
 
 function enableLightMode() {
-  const html = document.querySelector("html");
-  const main = document.querySelector("main");
-  const footer = document.querySelector("footer");
-  const nav = document.querySelector("nav");
-  const body = document.querySelector("body");
-  const title_subscr = document.querySelector("h1");
-  const sun = document.getElementById("sun");
-  const moon = document.getElementById("moon");
+  const html = document.documentElement;
+  const main = document.querySelector('main');
+  const nav = document.querySelector('nav');
+  const footer = document.querySelector('footer');
+  const body = document.body;
+  const sun = document.getElementById('sun');
+  const moon = document.getElementById('moon');
+  const title = document.querySelector('h1');
 
   html.setAttribute('data-bs-theme', 'light');
-  main.style.color = "black";
-  html.style.color = "black";
-  footer.style.color = "black";
-  nav.style.backgroundColor = "white";
-  body.style.backgroundColor = "white";
-  html.style.backgroundColor = "white";
-  footer.style.backgroundColor = "white";
-  title_subscr.style.color = "black";
-  sun.classList.add("d-block");
-  sun.classList.remove("d-none");
-  moon.classList.add("d-none");
-  moon.classList.remove("d-block");
+  html.style.color = 'black';
+  html.style.backgroundColor = 'white';
+  if (main) main.style.color = 'black';
+  if (title) title.style.color = 'black';
+  if (footer) {
+    footer.style.color = 'black';
+    footer.style.backgroundColor = 'white';
+  }
+  if (nav) nav.style.backgroundColor = 'white';
+  if (body) body.style.backgroundColor = 'white';
+  if (sun) { sun.classList.add('d-block'); sun.classList.remove('d-none'); }
+  if (moon) { moon.classList.add('d-none'); moon.classList.remove('d-block'); }
 
-  localStorage.setItem("mode_theme", "light");
+  localStorage.setItem('mode_theme', 'light');
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+function initPageChrome(defaultLanguage = 'it') {
+  const btn = document.getElementById('themeToggler');
+  const html = document.documentElement;
+  const roots = getLanguageRoots();
+  const savedLanguage = localStorage.getItem('language');
+  const targetLanguage = roots.en ? (savedLanguage === 'd-none' ? 'en' : 'it') : defaultLanguage;
+  setLanguage(targetLanguage);
 
+  const modeTheme = localStorage.getItem('mode_theme') || html.getAttribute('data-bs-theme') || 'light';
+  if (modeTheme === 'dark') enableDarkMode();
+  else enableLightMode();
 
-function PCFunction() {
-  const PCPage = document.getElementById("PCPage");
-  const CONSOLEPage = document.getElementById("CONSOLEPage");
-  const ACCESSORIESPage = document.getElementById("ACCESSORIESPage");
-  const GIFTCARDPage = document.getElementById("GIFTCARDPage");
-  const loadingPage = document.getElementById("loading-page");
-
-  PCPage.classList.remove("d-none");
-  PCPage.classList.add("d-block");
-  
-  CONSOLEPage.classList.remove("d-block"); 
-  CONSOLEPage.classList.add("d-none");
-
-  ACCESSORIESPage.classList.remove("d-block"); 
-  ACCESSORIESPage.classList.add("d-none");
-
-  GIFTCARDPage.classList.remove("d-block"); 
-  GIFTCARDPage.classList.add("d-none");
-
-  loadingPage.classList.remove("d-block"); 
-  loadingPage.classList.add("d-none");
+  if (btn) btn.addEventListener('click', checkHtmlMode);
+  if (window.ProfitHubPolish && window.ProfitHubPolish.navigateWithHrefButtons) {
+    window.ProfitHubPolish.navigateWithHrefButtons();
+  }
 }
 
-function CONSOLEFunction() {
-  const PCPage = document.getElementById("PCPage");
-  const CONSOLEPage = document.getElementById("CONSOLEPage");
-  const ACCESSORIESPage = document.getElementById("ACCESSORIESPage");
-  const GIFTCARDPage = document.getElementById("GIFTCARDPage");
-  const loadingPage = document.getElementById("loading-page");
-
-  PCPage.classList.remove("d-block");
-  PCPage.classList.add("d-none");
-
-  CONSOLEPage.classList.remove("d-none"); 
-  CONSOLEPage.classList.add("d-block");
-
-  ACCESSORIESPage.classList.remove("d-block"); 
-  ACCESSORIESPage.classList.add("d-none");
-
-  GIFTCARDPage.classList.remove("d-block"); 
-  GIFTCARDPage.classList.add("d-none");
-
-  loadingPage.classList.remove("d-block"); 
-  loadingPage.classList.add("d-none");
+function byIdVariants(root, baseId) {
+  return root.querySelector(`[id="${baseId}"]`) || root.querySelector(`[id="${baseId}-en"]`) || root.querySelector(`[id^="${baseId}-"]`);
 }
 
-function ACCESSORIESFunction() {
-  const PCPage = document.getElementById("PCPage");
-  const CONSOLEPage = document.getElementById("CONSOLEPage");
-  const ACCESSORIESPage = document.getElementById("ACCESSORIESPage");
-  const GIFTCARDPage = document.getElementById("GIFTCARDPage");
-  const loadingPage = document.getElementById("loading-page");
+function showProductPage(pageKey) {
+  const root = getActiveLanguageRoot();
+  if (!root) return;
+  const sections = {
+    PC: byIdVariants(root, 'PCPage'),
+    CONSOLE: byIdVariants(root, 'CONSOLEPage'),
+    ACCESSORIES: byIdVariants(root, 'ACCESSORIESPage'),
+    GIFTCARD: byIdVariants(root, 'GIFTCARDPage')
+  };
+  const loadingPage = byIdVariants(root, 'loading-page');
 
-  PCPage.classList.remove("d-block");
-  PCPage.classList.add("d-none");
+  Object.entries(sections).forEach(([key, element]) => {
+    if (!element) return;
+    element.classList.toggle('d-none', key !== pageKey);
+    element.classList.toggle('d-block', key === pageKey);
+  });
 
-  CONSOLEPage.classList.remove("d-block"); 
-  CONSOLEPage.classList.add("d-none");
-
-  ACCESSORIESPage.classList.remove("d-none"); 
-  ACCESSORIESPage.classList.add("d-block");
-
-  GIFTCARDPage.classList.remove("d-block"); 
-  GIFTCARDPage.classList.add("d-none");
-
-  loadingPage.classList.remove("d-block"); 
-  loadingPage.classList.add("d-none");
-  
+  if (loadingPage) {
+    loadingPage.classList.add('d-none');
+    loadingPage.classList.remove('d-block');
+  }
 }
 
-function GIFTCARDFunction() {
-  const PCPage = document.getElementById("PCPage");
-  const CONSOLEPage = document.getElementById("CONSOLEPage");
-  const ACCESSORIESPage = document.getElementById("ACCESSORIESPage");
-  const GIFTCARDPage = document.getElementById("GIFTCARDPage");
-  const loadingPage = document.getElementById("loading-page");
+function PCFunction() { showProductPage('PC'); }
+function CONSOLEFunction() { showProductPage('CONSOLE'); }
+function ACCESSORIESFunction() { showProductPage('ACCESSORIES'); }
+function GIFTCARDFunction() { showProductPage('GIFTCARD'); }
 
-  PCPage.classList.remove("d-block");
-  PCPage.classList.add("d-none");
-
-  CONSOLEPage.classList.remove("d-block"); 
-  CONSOLEPage.classList.add("d-none");
-
-  ACCESSORIESPage.classList.remove("d-block"); 
-  ACCESSORIESPage.classList.add("d-none");
-
-  GIFTCARDPage.classList.remove("d-none"); 
-  GIFTCARDPage.classList.add("d-block");
-
-  loadingPage.classList.remove("d-block"); 
-  loadingPage.classList.add("d-none");
-}
-
-function redirectToPayment()  {
+function redirectToPayment() {
   window.location.href = 'payment.html';
 }
+
+window.addEventListener('load', function () {
+  initPageChrome('it');
+  showProductPage('PC');
+});

@@ -1,176 +1,162 @@
-<!DOCTYPE html> <!-- index è la pagina che si trova prima del login -->
+<!DOCTYPE html>
+
+<!-- index è la pagina che si trova prima del login -->
 <html data-bs-theme="dark">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>ProfitHub</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+<title>ProfitHub</title>
+<!-- Icon -->
+<link href="../img/SHORTLOGO.png" rel="icon" type="image/png"/>
+<!-- Bootstrap 5 -->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Icon -->
-  <link rel="icon" type="image/png" href="../img/SHORTLOGO.png">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Personal styles and scripts -->
-  <link href="../css/home.css" rel="stylesheet" type="text/css" />
-  <script src="../js/homepage.js"></script>
-</head>
-
-<body>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAccount" aria-labelledby="offcanvasAccountLabel"
-    data-bs-scroll="true">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasAccountLabel">Account</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="mb-3">
-        <label for="validationCustom01" class="form-label">Name</label>
-        <input type="text" class="form-control" id="validationCustom01" required value="Marcus Aurelius" readonly>
-      </div>
-      <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="a**@**" readonly>
-      </div>
-      <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" value="**********" readonly required>
-      </div>
-    </div>
-  </div>
-  <header class="top-0">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="col-4 col-lg-2" href="home.html"><img src="../img/FULLLOGO.png" class="img-fluid rounded"
-          alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 row">
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="row nav-link" href="products.html" role="button" aria-expanded="false">PRODUCTS</a>
-                <ul class="dropdown-menu">
-                  <li><button class="p dropdown-item">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+<!-- Personal styles and scripts -->
+<link href="../css/home.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/homepage.js"></script>
+<link href="../css/polish.css" rel="stylesheet"/><script defer="" src="../js/polish.js"></script><script defer="" src="../js/demo.js"></script></head>
+<body class="demo-ready">
+<div aria-labelledby="offcanvasAccountLabel" class="offcanvas offcanvas-end" data-bs-scroll="true" id="offcanvasAccount" tabindex="-1">
+<div class="offcanvas-header">
+<h5 id="offcanvasAccountLabel">Account</h5>
+<button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<div class="mb-3">
+<label class="form-label" for="validationCustom01">Name</label>
+<input class="form-control" id="validationCustom01" readonly="" required="" type="text" value="Marcus Aurelius"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="exampleInputEmail1">Email</label>
+<input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" readonly="" required="" type="email" value="a**@**"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="exampleInputPassword1">Password</label>
+<input class="form-control" id="exampleInputPassword1" readonly="" required="" type="password" value="**********"/>
+</div>
+</div>
+</div>
+<header class="top-0">
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container-fluid">
+<a class="col-4 col-lg-2" href="home.html"><img alt="logo" class="img-fluid rounded" decoding="async" loading="eager" src="../img/FULLLOGO.png"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 row">
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="row nav-link" href="products.html" role="button">PRODUCTS</a>
+<ul class="dropdown-menu">
+<li><button class="p dropdown-item">
                       PC
                     </button></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><button class="p dropdown-item">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item">
                       Console
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Accessories
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Gift Card
                     </button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="row nav-link" href="games.html" role="button" aria-expanded="false">GAMES</a>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown">
-                <a class="row nav-link" href="subscription.html" role="button" aria-expanded="false">SUBSCRIPTION</a>
-                <ul class="dropdown-menu">
-                  <li><button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-login">
+</ul>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="row nav-link" href="games.html" role="button">GAMES</a>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown">
+<a aria-expanded="false" class="row nav-link" href="subscription.html" role="button">SUBSCRIPTION</a>
+<ul class="dropdown-menu">
+<li><button class="p dropdown-item" data-bs-target="#my-modal-login" data-bs-toggle="modal">
                       FREE
                     </button></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-login">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item" data-bs-target="#my-modal-login" data-bs-toggle="modal">
                       DELUXE
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-login">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item" data-bs-target="#my-modal-login" data-bs-toggle="modal">
                       PREMIUM
                     </button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-1 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="nav-link" href="help.html" role="button" aria-expanded="false">HELP</a>
-                <ul class="dropdown-menu">
-                  <li><button class="p dropdown-item">
+</ul>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-1 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="nav-link" href="help.html" role="button">HELP</a>
+<ul class="dropdown-menu">
+<li><button class="p dropdown-item">
                       Problemi di acquisto
                     </button></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><button class="p dropdown-item">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item">
                       Problemi di account
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Problemi con le missioni
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Problemi con il tracking delle missioni
                     </button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAccount"
-            aria-controls="offcanvasAccount" id="btn-log-reg">Account
+</ul>
+</div>
+</li>
+</ul>
+<button aria-controls="offcanvasAccount" class="btn btn-primary btn-log-reg" data-bs-target="#offcanvasAccount" data-bs-toggle="offcanvas" type="button">Account
           </button>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main class="container" id="main">
-
-
-    <!--ITALIANO-->
-    <div class="d-block justify-content-center" id="primo-div">
-      <div class="col-12 col-lg-12 w-100 text-center ">
-        <h1 class="text-center ">CONTINUA<br>A SCALARE</h1>
-        <img src="../img/coin.webp" id="coin-1" alt="coin-1">
-        <img src="../img/coin-2.webp" id="coin-2" alt="coin-2">
-        <img src="../img/coin-3.webp" id="coin-3" alt="coin-3">
-        <img src="../img/coin-4.webp" id="coin-4" alt="coin-4">
-        <img src="../img/coin-5.webp" id="coin-5" alt="coin-5">
-        <img src="../img/coin-6.webp" id="coin-6" alt="coin-6">
-        <img src="../img/coin-7.webp" id="coin-7" alt="coin-7">
-      </div>
-      <div class="row mt-4 pt-4">
-        <div class="col-6 col-lg-6 mt-5 pt-5">
-          <h2>QUELLO CHE OFFRIAMO</h2>
-          <p>In questo sito, le partite dei tuoi giochi preferiti vengono monitorate e le tue prestazioni
+</div>
+</div>
+</nav>
+</header>
+<main class="container" id="main">
+<!--ITALIANO-->
+<div class="d-block justify-content-center" id="primo-div">
+<div class="col-12 col-lg-12 w-100 text-center">
+<h1 class="text-center">CONTINUA<br/>A SCALARE</h1>
+<img alt="coin-1" class="coin-sprite coin-1" decoding="async" loading="eager" src="../img/coin.webp"/>
+<img alt="coin-2" class="coin-sprite coin-2" decoding="async" loading="eager" src="../img/coin-2.webp"/>
+<img alt="coin-3" class="coin-sprite coin-3" decoding="async" loading="eager" src="../img/coin-3.webp"/>
+<img alt="coin-4" class="coin-sprite coin-4" decoding="async" loading="lazy" src="../img/coin-4.webp"/>
+<img alt="coin-5" class="coin-sprite coin-5" decoding="async" loading="lazy" src="../img/coin-5.webp"/>
+<img alt="coin-6" class="coin-sprite coin-6" decoding="async" loading="lazy" src="../img/coin-6.webp"/>
+<img alt="coin-7" class="coin-sprite coin-7" decoding="async" loading="lazy" src="../img/coin-7.webp"/>
+</div>
+<div class="row mt-4 pt-4">
+<div class="col-6 col-lg-6 mt-5 pt-5">
+<h2>QUELLO CHE OFFRIAMO</h2>
+<p>In questo sito, le partite dei tuoi giochi preferiti vengono monitorate e le tue prestazioni
             vengono valutate in
             base a vari parametri come kill, assist, headshots e vittorie. Ogni azione positiva che compi durante il
             gioco ti
             permette di accumulare crediti virtuali.</p>
-        </div>
-        <div class="col-6 col-lg-6">
-          <img src="../img/img_console.jpg" class="img-fluid" id="img-main">
-        </div>
-        <div class="col-6 col-lg-6 mt-5">
-          <img src="../img/UpTrend-1-removebg-preview.png" class="img-fluid rounded" id="img-main">
-        </div>
-        <div class="col-6 col-lg-6" id="improve">
-          <h2>COME MIGLIORARE</h2>
-          <p>I punti possono essere successivamente convertiti in premi o
+</div>
+<div class="col-6 col-lg-6">
+<img class="img-fluid hero-main-image" decoding="async" loading="lazy" src="../img/img_console.jpg"/>
+</div>
+<div class="col-6 col-lg-6 mt-5">
+<img class="img-fluid rounded hero-main-image" decoding="async" loading="lazy" src="../img/UpTrend-1-removebg-preview.png"/>
+</div>
+<div class="col-6 col-lg-6 section-improve">
+<h2>COME MIGLIORARE</h2>
+<p>I punti possono essere successivamente convertiti in premi o
             addirittura in denaro reale, offrendoti l'opportunità di guadagnare giocando.
             Il sistema tiene traccia delle tue statistiche di gioco e utilizza algoritmi avanzati per valutare le tue
             abilità
@@ -178,112 +164,106 @@
             Questo
             modello incoraggia la competizione sana e premia i giocatori più abili, creando un'esperienza coinvolgente e
             gratificante per gli appassionati di videogiochi.</p>
-        </div>
-        <div class="col-6 col-lg-6 mt-5 pt-5">
-          <h2>RICOMPENSE</h2>
-          <p>
+</div>
+<div class="col-6 col-lg-6 mt-5 pt-5">
+<h2>RICOMPENSE</h2>
+<p>
             Raccogliendo punti PlayProfit potrai accedere a ricompense riguardanti a giochi e gadgets per il gaming,
             come
             sedie, monitor, tastiere, mouse e
             addirittura pre-build per computers. Inoltre con i nostri soldi virtuali puoi comprare gift card per Steam,
             Epic Games e altri siti.
-          </p><br>
-        </div>
-        <div class="col-6 col-lg-6">
-          <img src="../img/products.png" class="img-fluid" id="img-main">
-        </div>
-      </div>
-
-    </div>
-
-    <!--INGLESE-->
-    <div class="d-none justify-content-center" id="secondo-div">
-      <div class="col-12 col-lg-12 w-100 text-center ">
-        <h1 class="text-center ">KEEP ON<br>YOUR GRIND</h1>
-        <img src="../img/coin.webp" id="coin-1" alt="coin-1">
-        <img src="../img/coin-2.webp" id="coin-2" alt="coin-2">
-        <img src="../img/coin-3.webp" id="coin-3" alt="coin-3">
-        <img src="../img/coin-4.webp" id="coin-4" alt="coin-4">
-        <img src="../img/coin-5.webp" id="coin-5" alt="coin-5">
-        <img src="../img/coin-6.webp" id="coin-6" alt="coin-6">
-        <img src="../img/coin-7.webp" id="coin-7" alt="coin-7">
-      </div>
-      <div class="row mt-5 pt-5">
-        <div class="col-6 col-lg-6 mt-5 pt-5">
-          <h2>WHAT WE OFFER</h2>
-          <p>On this website, the matches of your favorite games are monitored, and your performance is evaluated based
+          </p><br/>
+</div>
+<div class="col-6 col-lg-6">
+<img class="img-fluid hero-main-image" decoding="async" loading="lazy" src="../img/products.png"/>
+</div>
+</div>
+</div>
+<!--INGLESE-->
+<div class="d-none justify-content-center" id="secondo-div">
+<div class="col-12 col-lg-12 w-100 text-center">
+<h1 class="text-center">KEEP ON<br/>YOUR GRIND</h1>
+<img alt="coin-1" decoding="async" id="coin-1-en" loading="lazy" src="../img/coin.webp"/>
+<img alt="coin-2" decoding="async" id="coin-2-en" loading="lazy" src="../img/coin-2.webp"/>
+<img alt="coin-3" decoding="async" id="coin-3-en" loading="lazy" src="../img/coin-3.webp"/>
+<img alt="coin-4" decoding="async" id="coin-4-en" loading="lazy" src="../img/coin-4.webp"/>
+<img alt="coin-5" decoding="async" id="coin-5-en" loading="lazy" src="../img/coin-5.webp"/>
+<img alt="coin-6" decoding="async" id="coin-6-en" loading="lazy" src="../img/coin-6.webp"/>
+<img alt="coin-7" decoding="async" id="coin-7-en" loading="lazy" src="../img/coin-7.webp"/>
+</div>
+<div class="row mt-5 pt-5">
+<div class="col-6 col-lg-6 mt-5 pt-5">
+<h2>WHAT WE OFFER</h2>
+<p>On this website, the matches of your favorite games are monitored, and your performance is evaluated based
             on various parameters such as kills, assists, headshots, and victories. Every positive action you take
             during the game allows you to accumulate virtual credits.</p>
-        </div>
-        <div class="col-6 col-lg-6">
-          <img src="../img/img_console.jpg" class="img-fluid" id="img-main">
-        </div>
-        <div class="col-6 col-lg-6 mt-5">
-          <img src="../img/UpTrend-1-removebg-preview.png" class="img-fluid rounded" id="img-main">
-        </div>
-        <div class="col-6 col-lg-6" id="improve">
-          <h2>HOW TO IMPROVE</h2>
-          <p>The points can be subsequently converted into prizes or even real money, offering you the opportunity to
+</div>
+<div class="col-6 col-lg-6">
+<img class="img-fluid" decoding="async" id="img-main-en" loading="lazy" src="../img/img_console.jpg"/>
+</div>
+<div class="col-6 col-lg-6 mt-5">
+<img class="img-fluid rounded" decoding="async" id="img-main-en-2" loading="lazy" src="../img/UpTrend-1-removebg-preview.png"/>
+</div>
+<div class="col-6 col-lg-6" id="improve-en">
+<h2>HOW TO IMPROVE</h2>
+<p>The points can be subsequently converted into prizes or even real money, offering you the opportunity to
             earn by playing.
             The system keeps track of your gaming statistics and uses advanced algorithms to assess your skills and your
             contribution to the team. The better you play, the more points you earn, and the greater your reward will
             be. This model encourages healthy competition and rewards the most skilled players, creating an engaging and
             rewarding experience for gaming enthusiasts.</p>
-        </div>
-        <div class="col-6 col-lg-6 mt-5 pt-5">
-          <h2>REWARDS</h2>
-          <p>By collecting PlayProfit points, you can access rewards related to games and gaming gadgets, such as
+</div>
+<div class="col-6 col-lg-6 mt-5 pt-5">
+<h2>REWARDS</h2>
+<p>By collecting PlayProfit points, you can access rewards related to games and gaming gadgets, such as
             chairs, monitors, keyboards, mice, and even pre-built computers. Additionally, with our virtual money, you
-            can purchase gift cards for Steam, Epic Games, and other sites.</p><br>
-        </div>
-        <div class="col-6 col-lg-6">
-          <img src="../img/products.png" class="img-fluid" id="img-main">
-        </div>
-      </div>
-
-    </div>
-  </main>
-  <footer class="container-fluid">
-    <hr>
-    <button class="btn position-fixed bottom-0 end-0" id="themeToggler"><i class="bi bi-sun d-none" id="sun"></i>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill"
-        id="moon" viewBox="0 0 16 16">
-        <path
-          d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
-      </svg></button>
-    <div class="text-center mb-3 me-5 position-fixed bottom-0 end-0 dropdown" id="dropdown-language">
-      <a class="row nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="en-it">
-        <i class="bi bi-globe"></i>
-        <span class="m-0 p-0" id="language_p">IT</span>
-        <i class="bi bi-caret-down-fill"></i>
-      </a>
-      <ul class="dropdown-menu" id="dropdown-menu-language">
-        <li><button class="p dropdown-item" onclick="italianFunction()">
+            can purchase gift cards for Steam, Epic Games, and other sites.</p><br/>
+</div>
+<div class="col-6 col-lg-6">
+<img class="img-fluid" decoding="async" id="img-main-en-3" loading="lazy" src="../img/products.png"/>
+</div>
+</div>
+</div>
+</main>
+<footer class="container-fluid">
+<hr/>
+<button class="btn position-fixed bottom-0 end-0" id="themeToggler"><i class="bi bi-sun d-none" id="sun"></i>
+<svg class="bi bi-moon-fill" fill="currentColor" height="16" id="moon" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"></path>
+</svg></button>
+<div class="text-center mb-3 me-5 position-fixed bottom-0 end-0 dropdown" id="dropdown-language">
+<a aria-expanded="false" class="row nav-link" data-bs-toggle="dropdown" href="#" id="en-it" role="button">
+<i class="bi bi-globe"></i>
+<span class="m-0 p-0" id="language_p">IT</span>
+<i class="bi bi-caret-down-fill"></i>
+</a>
+<ul class="dropdown-menu" id="dropdown-menu-language">
+<li><button class="p dropdown-item" onclick="italianFunction()">
             ITALIANO
             •
             IT
           </button></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><button class="p dropdown-item" onclick="englishFunction()">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item" onclick="englishFunction()">
             ENGLISH
             •
             EN
           </button></li>
-      </ul>
-    </div>
-    <div class="container">
-      <img src="../img/FULLLOGO.png" class="img-fluid col-3 col-lg-2">
-      <div class="row">
-        <div>2024 © PlayProfit</div>
-        <div>Ahmed Dere Omar & Lukas Fossati</div>
-        <div>3^F I.I.S. G. Vallauri - Fossano</div>
-      </div>
-      <ul class="row list-unstyled mt-3">
-        <li class="col-6 col-lg-1 mb-3"><a class="nav-link" href="help.html" aria-current="page">Help</a></li>
-      </ul>
-  </footer>
+</ul>
+</div>
+<div class="container">
+<img class="img-fluid col-3 col-lg-2" decoding="async" loading="lazy" src="../img/FULLLOGO.png"/>
+<div class="row">
+<div data-current-year=""></div>
+<div>Ahmed Dere Omar &amp; Lukas Fossati</div>
+<div>3^F I.I.S. G. Vallauri - Fossano</div>
+</div>
+<ul class="row list-unstyled mt-3">
+<li class="col-6 col-lg-1 mb-3"><a aria-current="page" class="nav-link" href="help.html">Help</a></li>
+</ul>
+</div></footer>
 </body>
-
 </html>

@@ -1,263 +1,376 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const categorySwitches = document.querySelectorAll('.category-switch');
-  const gamesContainer = document.querySelector('.games-folder');
-  let games = Array.from(gamesContainer.querySelectorAll('.game'));
-  const searchInput = document.querySelector('.input-search');
 
-  // Function to filter games based on selected categories
-  const filterGames = () => {
-    const selectedCategories = Array.from(categorySwitches)
-      .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.id.replace('Switch', ''));
-
-    games.forEach(game => {
-      const categories = Array.from(game.querySelectorAll('.category p')).map(p => p.textContent.trim());
-      const isVisible = selectedCategories.every(category => categories.includes(category));
-      game.style.display = isVisible ? 'block' : 'none';
-    });
+function getLanguageRoots() {
+  const itRoot = document.getElementById('primo-div');
+  const englishRoot = document.getElementById('secondo-div-en') || document.getElementById('secondo-div');
+  const sharedRoot = !englishRoot || englishRoot.children.length === 0 ? itRoot : englishRoot;
+  return {
+    it: itRoot,
+    en: sharedRoot
   };
+}
 
-  // Event listener for category switches
-  categorySwitches.forEach(checkbox => {
-    checkbox.addEventListener('change', filterGames);
+function getActiveLanguageRoot() {
+  const roots = getLanguageRoots();
+  if (roots.en && roots.en.classList.contains('d-block')) return roots.en;
+  return roots.it || document;
+}
+
+
+const GAMES_COPY = {
+  it: {
+    title: 'GIOCHI',
+    featured: 'NUOVE USCITE',
+    searchPlaceholder: 'Cerca un gioco',
+    filters: 'Filtri categoria',
+    sortNew: 'NUOVI',
+    sortFavorite: 'PREFERITI',
+    favorite: 'Preferito',
+    comingSoon: 'In arrivo...',
+    categories: {
+      Action: 'Azione', Adventure: 'Avventura', Arcade: 'Arcade', BattleRoyale: 'Battle Royale',
+      'Co-Op': 'Co-op', Competitive: 'Competitivo', Crime: 'Crimine', eSport: 'eSport', Fighting: 'Picchiaduro',
+      FPS: 'FPS', Horror: 'Horror', Hunt: 'Caccia', Indie: 'Indie', Moba: 'MOBA', Multiplayer: 'Multigiocatore',
+      PvE: 'PvE', PvP: 'PvP', Racing: 'Corse', Race: 'Gare', RPG: 'RPG', SandBox: 'Sandbox',
+      'Sci-Fi': 'Sci-fi', Singleplayer: 'Giocatore singolo', Stealth: 'Stealth', Strategy: 'Strategia',
+      Team: 'Team', 'Third-Person-Shooter': 'Sparatutto in terza persona', OpenWorld: 'Mondo aperto',
+      Shooter: 'Sparatutto', Simulation: 'Simulazione', Simulator: 'Simulatore', Survival: 'Sopravvivenza'
+    }
+  },
+  en: {
+    title: 'GAMES',
+    featured: 'NEW ARRIVALS',
+    searchPlaceholder: 'Search for a game',
+    filters: 'Category Filters',
+    sortNew: 'NEW',
+    sortFavorite: 'FAVORITE',
+    favorite: 'Favorite',
+    comingSoon: 'Coming soon...',
+    categories: {}
+  }
+};
+
+const GAME_CATEGORY_CANONICAL = {
+  Action: 'Action', Azione: 'Action', Adventure: 'Adventure', Avventura: 'Adventure', Arcade: 'Arcade',
+  'Battle Royale': 'BattleRoyale', BattleRoyale: 'BattleRoyale', 'Co-op': 'Co-Op', 'Co-Op': 'Co-Op',
+  Competitivo: 'Competitive', Competitive: 'Competitive', Crime: 'Crime', Crimine: 'Crime', eSport: 'eSport',
+  Fighting: 'Fighting', Picchiaduro: 'Fighting', FPS: 'FPS', Horror: 'Horror', Hunt: 'Hunt', Caccia: 'Hunt',
+  Indie: 'Indie', MOBA: 'Moba', Moba: 'Moba', Multigiocatore: 'Multiplayer', Multiplayer: 'Multiplayer',
+  PvE: 'PvE', PvP: 'PvP', Corse: 'Racing', Racing: 'Racing', Gare: 'Race', Race: 'Race', RPG: 'RPG',
+  Sandbox: 'SandBox', SandBox: 'SandBox', 'Sci-Fi': 'Sci-Fi', 'Sci-fi': 'Sci-Fi', 'Giocatore singolo': 'Singleplayer',
+  Singleplayer: 'Singleplayer', Stealth: 'Stealth', Strategia: 'Strategy', Strategy: 'Strategy', Team: 'Team',
+  'Sparatutto in terza persona': 'Third-Person-Shooter', 'Third-Person-Shooter': 'Third-Person-Shooter',
+  'Mondo aperto': 'OpenWorld', OpenWorld: 'OpenWorld', Sparatutto: 'Shooter', Shooter: 'Shooter',
+  Simulazione: 'Simulation', Simulation: 'Simulation', Simulatore: 'Simulator', Simulator: 'Simulator',
+  Sopravvivenza: 'Survival', Survival: 'Survival'
+};
+
+function getGameCopy(lang) {
+  return GAMES_COPY[lang] || GAMES_COPY.it;
+}
+
+function localizeGamesPage(lang) {
+  const roots = getLanguageRoots();
+  const root = lang === 'en' ? roots.en : roots.it;
+  if (!root) return;
+  const copy = getGameCopy(lang);
+
+  const headings = root.querySelectorAll('h1, .featured');
+  if (headings[0]) headings[0].textContent = copy.title;
+  if (headings[1]) headings[1].textContent = copy.featured;
+
+  const searchInput = root.querySelector('.input-search');
+  if (searchInput) searchInput.setAttribute('placeholder', copy.searchPlaceholder);
+
+  const carouselLabels = root.querySelectorAll('.visually-hidden');
+  if (carouselLabels[0]) carouselLabels[0].textContent = lang === 'it' ? 'Precedente' : 'Previous';
+  if (carouselLabels[1]) carouselLabels[1].textContent = lang === 'it' ? 'Successivo' : 'Next';
+
+  const filterHeading = root.querySelector('.switches h4');
+  if (filterHeading) filterHeading.innerHTML = '<i class="bi bi-cursor"></i> ' + copy.filters;
+
+  root.querySelectorAll('.category p').forEach((pill) => {
+    const visible = (pill.textContent || '').trim();
+    const canonical = pill.dataset.category || GAME_CATEGORY_CANONICAL[visible] || visible;
+    pill.dataset.category = canonical;
+    pill.textContent = copy.categories[canonical] || canonical;
   });
 
-  // Function to sort games alphabetically
-  const sortGamesAZ = () => {
-    sortGames((a, b) => a.title.localeCompare(b.title));
-  };
-
-  // Function to sort games reverse alphabetically
-  const sortGamesZA = () => {
-    sortGames((a, b) => b.title.localeCompare(a.title));
-  };
-
-  // Function to sort games by "New" badge
-  const sortGamesNew = () => {
-    games = Array.from(gamesContainer.querySelectorAll('.game'));
-    games.sort((a, b) => {
-      let isNewA = a.querySelector('.new') !== null;
-      let isNewB = b.querySelector('.new') !== null;
-
-      if (isNewA && !isNewB) return -1;
-      if (!isNewA && isNewB) return 1;
-      return a.title.localeCompare(b.title);
-    });
-    games.forEach(game => gamesContainer.appendChild(game));
-  };
-
-  // Function to sort games by "Favorite" badge
-  const sortGamesFavorite = () => {
-    games = Array.from(gamesContainer.querySelectorAll('.game'));
-    games.sort((a, b) => {
-      let isNewA = a.querySelector('.favorite') !== null;
-      let isNewB = b.querySelector('.favorite') !== null;
-
-      if (isNewA && !isNewB) return -1;
-      if (!isNewA && isNewB) return 1;
-      return a.title.localeCompare(b.title);
-    });
-    games.forEach(game => gamesContainer.appendChild(game));
-  };
-
-  // Function to sort games based on comparator function
-  const sortGames = (comparator) => {
-    games = Array.from(gamesContainer.querySelectorAll('.game'));
-    games.sort((a, b) => comparator(getGameInfo(a), getGameInfo(b)));
-    games.forEach(game => gamesContainer.appendChild(game));
-  };
-
-  // Function to extract game information from DOM element
-  const getGameInfo = (gameElement) => {
-    const title = gameElement.querySelector('h3').textContent.trim().toLowerCase();
-    return { title };
-  };
-
-  // Event listeners for dropdown items
-  document.getElementById('sortAZ').addEventListener('click', sortGamesAZ);
-  document.getElementById('sortZA').addEventListener('click', sortGamesZA);
-  document.getElementById('sortNew').addEventListener('click', sortGamesNew);
-  document.getElementById('sortFavorite').addEventListener('click', sortGamesFavorite);
-
-  // Event listener for search input
-  searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.trim().toLowerCase();
-    games.forEach(game => {
-      const gameTitle = game.querySelector('h3').textContent.trim().toLowerCase();
-      const isTitleMatch = gameTitle.includes(searchTerm);
-      const isVisible = isTitleMatch;
-      game.style.display = isVisible ? 'block' : 'none';
-    });
+  root.querySelectorAll('.form-check-label').forEach((label) => {
+    const visible = (label.textContent || '').trim();
+    const canonical = GAME_CATEGORY_CANONICAL[visible] || visible;
+    label.dataset.category = canonical;
+    label.textContent = copy.categories[canonical] || canonical;
   });
 
+  const sortAZ = byIdVariants(root, 'sortAZ');
+  const sortZA = byIdVariants(root, 'sortZA');
+  const sortNew = byIdVariants(root, 'sortNew');
+  const sortFavorite = byIdVariants(root, 'sortFavorite');
+  if (sortAZ) sortAZ.textContent = 'A-Z';
+  if (sortZA) sortZA.textContent = 'Z-A';
+  if (sortNew) sortNew.textContent = copy.sortNew;
+  if (sortFavorite) sortFavorite.textContent = copy.sortFavorite;
 
+  root.querySelectorAll('.offcanvas-body p').forEach((el) => {
+    if (/in arrivo|coming soon/i.test((el.textContent || '').trim())) {
+      el.textContent = copy.comingSoon;
+    }
+  });
 
-  // Initial call to filterGames to show all games
-  filterGames();
-
-
-  var savedGames = JSON.parse(localStorage.getItem('SavedGames'));
-
-  if (savedGames) {
-    savedGames.forEach(function(gameId) {
-      var h3Id = gameId;
-      const h3Element = document.getElementById(h3Id);
-
-      var iconName = gameId + "-icon";
-      const iconElement = document.getElementById(iconName);
-
-      if (h3Element) {
-
-        var badge = document.createElement('span');
-        badge.classList.add('badge', 'bg-warning', 'favorite');
-        badge.textContent = 'Favorite';
-
-        h3Element.appendChild(badge);
-      }
-      
-      
-      iconElement.classList.remove('bi-star');
-      iconElement.classList.add('bi-star-fill');
-    });
-  }
-});
-
-
-function changeImg(icon) {
-
-  var dropdown = document.getElementsByClassName('show');
-
-  if (dropdown) {
-    icon.classList.toggle('bi-chevron-bar-contract');
-    icon.classList.toggle('bi-list');
-  }
-
+  root.querySelectorAll('.favorite').forEach((badge) => {
+    badge.textContent = copy.favorite;
+  });
 }
 
+function setLanguage(mode) {
+  const roots = getLanguageRoots();
+  const languageLabel = document.getElementById('language_p');
+  const sharedRoot = roots.it && roots.en && roots.it === roots.en;
 
-function toggleFavorite(icon, gameName) {
-  // Toggle class to change the icon
-  icon.classList.toggle('bi-star-fill');
-  icon.classList.toggle('bi-star');
-
-  let SavedGames = JSON.parse(localStorage.getItem('SavedGames')) || [];
-
-  let index = SavedGames.indexOf(gameName);
-  if (index !== -1) {
-    SavedGames.splice(index, 1);
+  if (roots.it) {
+    if (sharedRoot) {
+      roots.it.classList.remove('d-none');
+      roots.it.classList.add('d-block');
+    } else {
+      roots.it.classList.toggle('d-none', mode !== 'it');
+      roots.it.classList.toggle('d-block', mode === 'it');
+    }
   }
-  else {
-    SavedGames.push(gameName);
-  }
-
-  localStorage.setItem('SavedGames', JSON.stringify(SavedGames));
-
-  var isFavorite = icon.classList.contains('bi-star-fill');
-
-  // Get the parent element of the icon
-  var parent = icon.parentElement;
-
-  // Check if the game already has a favorite badge
-  var favoriteBadge = parent.querySelector('.favorite');
-
-  if (favoriteBadge) {
-    // If favorite badge exists, remove it
-    favoriteBadge.remove();
+  if (roots.en && !sharedRoot) {
+    roots.en.classList.toggle('d-none', mode !== 'en');
+    roots.en.classList.toggle('d-block', mode === 'en');
   }
 
-  if (isFavorite) {
-    // If favorite badge doesn't exist, create and add it
-    var badge = document.createElement('span');
-    badge.classList.add('badge', 'bg-warning', 'favorite');
-    badge.textContent = 'Favorite';
-    parent.querySelector('h3').appendChild(badge);
-  }
+  if (languageLabel) languageLabel.innerText = mode === 'it' ? 'IT' : 'EN';
+  localizeGamesPage(mode);
+  localStorage.setItem('language', mode === 'it' ? 'd-block' : 'd-none');
 }
 
-
-/////////////////////////////////////////////////////////
-
-
-window.addEventListener("load", function() {
-  const btn = document.getElementById("themeToggler");
-  const html = document.querySelector("html");
-
-  italianFunction();
-
-  let mode_theme = localStorage.getItem("mode_theme");
-  if (mode_theme === null) {
-    mode_theme = html.getAttribute('data-bs-theme');
-  }
-  if (mode_theme === "dark")
-    enableDarkMode();
-  else
-    enableLightMode();
-
-  btn.addEventListener("click", checkHtmlMode);
-});
-
-function italianFunction() {
-  const primoDiv = document.getElementById("primo-div");
-
-  primoDiv.classList.remove("d-none");
-  primoDiv.classList.add("d-block");
-
-  const language_p = document.getElementById("language_p");
-  language_p.innerText = "IT";
-
-}
+function italianFunction() { setLanguage('it'); }
+function englishFunction() { setLanguage('en'); }
 
 function checkHtmlMode() {
-  const html = document.querySelector("html");
-  if (html.getAttribute('data-bs-theme') == 'light')
-    enableDarkMode();
-  else
-    enableLightMode();
+  const html = document.documentElement;
+  if (html.getAttribute('data-bs-theme') === 'light') enableDarkMode();
+  else enableLightMode();
 }
 
 function enableDarkMode() {
-  const html = document.querySelector("html");
-  const main = document.querySelector("main");
-  const nav = document.querySelector("nav");
-  const body = document.querySelector("body");
-  const sun = document.getElementById("sun");
-  const moon = document.getElementById("moon");
+  const html = document.documentElement;
+  const main = document.querySelector('main');
+  const nav = document.querySelector('nav');
+  const footer = document.querySelector('footer');
+  const body = document.body;
+  const sun = document.getElementById('sun');
+  const moon = document.getElementById('moon');
+  const title = document.querySelector('h1');
 
   html.setAttribute('data-bs-theme', 'dark');
-  html.style.color = "white";
-  main.style.color = "white";
-  html.style.backgroundColor = "#000415";
-  body.style.backgroundColor = "#000415";
-  nav.style.backgroundColor = "#101a27";
-  sun.classList.add("d-none");
-  sun.classList.remove("d-block");
-  moon.classList.add("d-block");
-  moon.classList.remove("d-none");
+  html.style.color = 'white';
+  if (main) main.style.color = 'white';
+  if (title) title.style.color = 'white';
+  if (footer) {
+    footer.style.color = 'white';
+    footer.style.backgroundColor = '#101a27';
+  }
+  if (nav) nav.style.backgroundColor = '#101a27';
+  if (body) body.style.backgroundColor = '#000415';
+  html.style.backgroundColor = '#000415';
+  if (sun) { sun.classList.add('d-none'); sun.classList.remove('d-block'); }
+  if (moon) { moon.classList.add('d-block'); moon.classList.remove('d-none'); }
 
-  localStorage.setItem("mode_theme", "dark");
+  localStorage.setItem('mode_theme', 'dark');
 }
 
 function enableLightMode() {
-  const html = document.querySelector("html");
-  const main = document.querySelector("main");
-  const footer = document.querySelector("footer");
-  const body = document.querySelector("body");
-  const nav = document.querySelector("nav");
-  const sun = document.getElementById("sun");
-  const moon = document.getElementById("moon");
+  const html = document.documentElement;
+  const main = document.querySelector('main');
+  const nav = document.querySelector('nav');
+  const footer = document.querySelector('footer');
+  const body = document.body;
+  const sun = document.getElementById('sun');
+  const moon = document.getElementById('moon');
+  const title = document.querySelector('h1');
 
   html.setAttribute('data-bs-theme', 'light');
-  main.style.color = "black";
-  html.style.color = "black";
-  footer.style.color = "white";
-  html.style.backgroundColor = "white";
-  footer.style.backgroundColor = "#101a27";
-  nav.style.backgroundColor = "white";
-  body.style.backgroundColor = "white";
-  sun.classList.add("d-block");
-  sun.classList.remove("d-none");
-  moon.classList.add("d-none");
-  moon.classList.remove("d-block");
+  html.style.color = 'black';
+  html.style.backgroundColor = 'white';
+  if (main) main.style.color = 'black';
+  if (title) title.style.color = 'black';
+  if (footer) {
+    footer.style.color = 'black';
+    footer.style.backgroundColor = 'white';
+  }
+  if (nav) nav.style.backgroundColor = 'white';
+  if (body) body.style.backgroundColor = 'white';
+  if (sun) { sun.classList.add('d-block'); sun.classList.remove('d-none'); }
+  if (moon) { moon.classList.add('d-none'); moon.classList.remove('d-block'); }
 
-  localStorage.setItem("mode_theme", "light");
+  localStorage.setItem('mode_theme', 'light');
 }
+
+function initPageChrome(defaultLanguage = 'it') {
+  const btn = document.getElementById('themeToggler');
+  const html = document.documentElement;
+  const roots = getLanguageRoots();
+  const savedLanguage = localStorage.getItem('language');
+  const targetLanguage = roots.en ? (savedLanguage === 'd-none' ? 'en' : 'it') : defaultLanguage;
+  setLanguage(targetLanguage);
+
+  const modeTheme = localStorage.getItem('mode_theme') || html.getAttribute('data-bs-theme') || 'light';
+  if (modeTheme === 'dark') enableDarkMode();
+  else enableLightMode();
+
+  if (btn) btn.addEventListener('click', checkHtmlMode);
+  if (window.ProfitHubPolish && window.ProfitHubPolish.navigateWithHrefButtons) {
+    window.ProfitHubPolish.navigateWithHrefButtons();
+  }
+}
+
+function byIdVariants(root, baseId) {
+  return root.querySelector(`[id="${baseId}"]`) || root.querySelector(`[id="${baseId}-en"]`) || root.querySelector(`[id^="${baseId}-"]`);
+}
+
+function changeImg(icon) {
+  if (!icon) return;
+  icon.classList.toggle('bi-chevron-bar-contract');
+  icon.classList.toggle('bi-list');
+}
+
+function getSavedGames() {
+  try {
+    return JSON.parse(localStorage.getItem('SavedGames')) || [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function setSavedGames(games) {
+  localStorage.setItem('SavedGames', JSON.stringify([...new Set(games)]));
+}
+
+function syncFavorites() {
+  const savedGames = new Set(getSavedGames());
+
+  document.querySelectorAll('.favorite').forEach((badge) => badge.remove());
+  document.querySelectorAll('.favorite-star').forEach((icon) => {
+    icon.classList.remove('bi-star-fill');
+    if (!icon.classList.contains('bi-star')) icon.classList.add('bi-star');
+  });
+
+  savedGames.forEach((gameName) => {
+    const titleTargets = [
+      document.getElementById(gameName),
+      document.getElementById(gameName + '-en')
+    ].filter(Boolean);
+
+    titleTargets.forEach((title) => {
+      if (!title.querySelector('.favorite')) {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-warning favorite ms-2';
+        badge.textContent = title.id.endsWith('-en') ? getGameCopy('en').favorite : getGameCopy('it').favorite;
+        title.appendChild(badge);
+      }
+    });
+
+    const iconTargets = [
+      document.getElementById(gameName + '-icon'),
+      document.getElementById(gameName + '-icon-en')
+    ].filter(Boolean);
+
+    iconTargets.forEach((icon) => {
+      icon.classList.remove('bi-star');
+      icon.classList.add('bi-star-fill');
+    });
+  });
+}
+
+function toggleFavorite(_icon, gameName) {
+  const savedGames = getSavedGames();
+  const index = savedGames.indexOf(gameName);
+  if (index >= 0) savedGames.splice(index, 1);
+  else savedGames.push(gameName);
+  setSavedGames(savedGames);
+  syncFavorites();
+}
+
+function wireGamesSection(root) {
+  if (!root) return;
+  const gamesContainer = root.querySelector('.games-folder');
+  const searchInput = root.querySelector('.input-search');
+  const categorySwitches = Array.from(root.querySelectorAll('.category-switch'));
+  const sortAZ = byIdVariants(root, 'sortAZ');
+  const sortZA = byIdVariants(root, 'sortZA');
+  const sortNew = byIdVariants(root, 'sortNew');
+  const sortFavorite = byIdVariants(root, 'sortFavorite');
+  if (!gamesContainer) return;
+
+  const getGames = () => Array.from(gamesContainer.querySelectorAll('.game'));
+  const getTitle = (game) => (game.querySelector('h3')?.textContent || '').trim().toLowerCase();
+
+  function render(comparator = null) {
+    let games = getGames();
+    if (comparator) {
+      games.sort(comparator);
+      games.forEach((game) => gamesContainer.appendChild(game));
+      games = getGames();
+    }
+
+    const selectedCategories = categorySwitches
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => checkbox.id.replace(/-en$/, '').replace(/Switch$/, '').replace(/Switch-\d+$/, ''));
+
+    const searchTerm = (searchInput?.value || '').trim().toLowerCase();
+
+    games.forEach((game) => {
+      const categories = Array.from(game.querySelectorAll('.category p')).map((p) => p.dataset.category || p.textContent.trim());
+      const titleMatch = !searchTerm || getTitle(game).includes(searchTerm);
+      const categoryMatch = selectedCategories.every((category) => categories.includes(category));
+      const visible = titleMatch && categoryMatch;
+      game.style.display = visible ? 'block' : 'none';
+    });
+  }
+
+  categorySwitches.forEach((checkbox) => checkbox.addEventListener('change', () => render()));
+  if (searchInput) searchInput.addEventListener('input', () => render());
+  if (sortAZ) sortAZ.addEventListener('click', () => render((a, b) => getTitle(a).localeCompare(getTitle(b))));
+  if (sortZA) sortZA.addEventListener('click', () => render((a, b) => getTitle(b).localeCompare(getTitle(a))));
+  if (sortNew) {
+    sortNew.addEventListener('click', () => render((a, b) => {
+      const aNew = a.querySelector('.new') !== null;
+      const bNew = b.querySelector('.new') !== null;
+      if (aNew && !bNew) return -1;
+      if (!aNew && bNew) return 1;
+      return getTitle(a).localeCompare(getTitle(b));
+    }));
+  }
+  if (sortFavorite) {
+    sortFavorite.addEventListener('click', () => render((a, b) => {
+      const aFavorite = a.querySelector('.favorite') !== null;
+      const bFavorite = b.querySelector('.favorite') !== null;
+      if (aFavorite && !bFavorite) return -1;
+      if (!aFavorite && bFavorite) return 1;
+      return getTitle(a).localeCompare(getTitle(b));
+    }));
+  }
+
+  render();
+}
+
+window.addEventListener('load', function () {
+  initPageChrome('it');
+  localizeGamesPage(localStorage.getItem('language') === 'd-none' ? 'en' : 'it');
+  wireGamesSection(document.getElementById('primo-div') || document);
+  wireGamesSection(document.getElementById('secondo-div-en') || document.getElementById('secondo-div'));
+  syncFavorites();
+});
+
+window.addEventListener('profithub:languagechange', function (event) {
+  localizeGamesPage(event.detail?.lang || (localStorage.getItem('language') === 'd-none' ? 'en' : 'it'));
+  if (typeof syncFavorites === 'function') syncFavorites();
+});
+
+window.addEventListener('profithub:languagechange', (event) => {
+  const lang = event?.detail?.lang === 'en' ? 'en' : 'it';
+  localizeGamesPage(lang);
+});

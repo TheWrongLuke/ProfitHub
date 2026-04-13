@@ -1,1074 +1,951 @@
 <!DOCTYPE html>
+
 <html data-bs-theme="dark">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>ProfitHub</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+<title>ProfitHub</title>
+<!-- Icon -->
+<link href="../img/SHORTLOGO.png" rel="icon" type="image/png"/>
+<!-- Bootstrap 5 -->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Icon -->
-  <link rel="icon" type="image/png" href="../img/SHORTLOGO.png">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Personal styles and scripts -->
-  <link href="../css/games.css" rel="stylesheet" type="text/css" />
-  <script src="../js/games(noLogin).js"></script>
-</head>
-
-<body>
-  <header class="top-0">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="col-4 col-lg-2" href="index.html"><img src="../img/FULLLOGO.png" class="img-fluid rounded"
-            alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 row">
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="row nav-link" data-bs-toggle="modal" data-bs-target="#my-modal-register" role="button" aria-expanded="false">PRODUCTS</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-register">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+<!-- Personal styles and scripts -->
+<link href="../css/games.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/games(noLogin).js"></script>
+<link href="../css/polish.css" rel="stylesheet"/><script defer="" src="../js/polish.js"></script><script defer="" src="../js/demo.js"></script></head>
+<body class="demo-ready">
+<header class="top-0">
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container-fluid">
+<a class="col-4 col-lg-2" href="../index.html"><img alt="logo" class="img-fluid rounded" decoding="async" loading="eager" src="../img/FULLLOGO.png"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 row">
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="row nav-link" data-bs-target="#my-modal-register" data-bs-toggle="modal" role="button">PRODUCTS</a>
+<ul class="dropdown-menu">
+<li>
+<button class="p dropdown-item" data-bs-target="#my-modal-register" data-bs-toggle="modal">
                       PC
                     </button>
-                  </li>
-                  <hr class="dropdown-divider">
-                  <li>
-                    <button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-register">
+</li>
+<hr class="dropdown-divider"/>
+<li>
+<button class="p dropdown-item" data-bs-target="#my-modal-register" data-bs-toggle="modal">
                       Console
                     </button>
-                  </li>
-                  <hr class="dropdown-divider">
-                  <li>
-                    <button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-register">
+</li>
+<hr class="dropdown-divider"/>
+<li>
+<button class="p dropdown-item" data-bs-target="#my-modal-register" data-bs-toggle="modal">
                       Accessories
                     </button>
-                  </li>
-                  <hr class="dropdown-divider">
-                  <li>
-                    <button class="p dropdown-item" data-bs-toggle="modal" data-bs-target="#my-modal-register">
+</li>
+<hr class="dropdown-divider"/>
+<li>
+<button class="p dropdown-item" data-bs-target="#my-modal-register" data-bs-toggle="modal">
                       Gift Card
                     </button>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="row nav-link" href="games(noLogin).html" role="button" aria-expanded="false">GAMES</a>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-2 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown">
-                <a class="row nav-link" href="subscription(noLogin).html" role="button" aria-expanded="false">SUBSCRIPTION</a>
-                <ul class="dropdown-menu">
-                  <li><a class="p dropdown-item" href="register.html">
+</li>
+</ul>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="row nav-link" href="games(noLogin).html" role="button">GAMES</a>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-2 text-center ms-5 navlink">
+<div class="nav-item dropdown">
+<a aria-expanded="false" class="row nav-link" href="subscription(noLogin).html" role="button">SUBSCRIPTION</a>
+<ul class="dropdown-menu">
+<li><a class="p dropdown-item" href="register.html">
                       FREE
                 </a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                    <li><a class="p dropdown-item" href="registerP.html">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><a class="p dropdown-item" href="registerP.html">
                         DELUXE
                   </a></li>
-                  <hr class="dropdown-divider">
-                    <li><a class="p dropdown-item" href="registerP.html">
+<hr class="dropdown-divider"/>
+<li><a class="p dropdown-item" href="registerP.html">
                         PREMIUM
                   </a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item col-11 col-lg-1 text-center ms-5" id="navlink">
-              <div class="nav-item dropdown text-center">
-                <a class="row nav-link" href="help(noLogin).html" role="button" aria-expanded="false">HELP</a>
-                <ul class="dropdown-menu">
-                  <li><button class="p dropdown-item">
+</ul>
+</div>
+</li>
+<li class="nav-item col-11 col-lg-1 text-center ms-5 navlink">
+<div class="nav-item dropdown text-center">
+<a aria-expanded="false" class="row nav-link" href="help(noLogin).html" role="button">HELP</a>
+<ul class="dropdown-menu">
+<li><button class="p dropdown-item">
                       Problemi di acquisto
                     </button></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><button class="p dropdown-item">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item">
                       Problemi di account
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Problemi con le missioni
                     </button></li>
-                  <hr class="dropdown-divider">
-                  <li><button class="p dropdown-item">
+<hr class="dropdown-divider"/>
+<li><button class="p dropdown-item">
                       Problemi con il tracking delle missioni
                     </button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <div id="div-sign-register">
-            <button type="button" class="btn m-2 p-2 flex-wrap" data-bs-toggle="modal" data-bs-target="#my-modal-login"
-              id="btn-log-reg" aria-current="page">LOGIN</button>
-          </div>
-          <div id="div-sign-register">
-            <button type="button" class="btn m-2 p-2" aria-current="page" data-bs-toggle="modal"
-              data-bs-target="#my-modal-register" id="btn-log-reg">REGISTER</button>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div class="modal" tabindex="-1" id="my-modal-login">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header border-0">
-            <h4 class="modal-title text-center ms-5 ps-5">ACCEDI A PLAYPROFIT</h4>
-            <a class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
-          </div>
-          <div class="modal-body d-flex justify-content-center "> 
-            <form method="get" action="home.html" class="g-3 was-validated rounded" id="form">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                <div class="valid-feedback">
+</ul>
+</div>
+</li>
+</ul>
+<div class="sign-register">
+<button aria-current="page" class="btn m-2 p-2 flex-wrap btn-log-reg" data-bs-target="#my-modal-login" data-bs-toggle="modal" type="button">LOGIN</button>
+</div>
+<div class="sign-register">
+<button aria-current="page" class="btn m-2 p-2 btn-log-reg" data-bs-target="#my-modal-register" data-bs-toggle="modal" type="button">REGISTER</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="modal" id="my-modal-login" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h4 class="modal-title text-center ms-5 ps-5">ACCEDI A PLAYPROFIT</h4>
+<a aria-label="Close" class="btn btn-close" data-bs-dismiss="modal"></a>
+</div>
+<div class="modal-body d-flex justify-content-center">
+<form action="home.html" class="g-3 was-validated rounded form-surface" method="get">
+<div class="mb-3">
+<label class="form-label" for="exampleInputEmail1">Email:</label>
+<input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" name="exampleinputemail1" required="" type="email"/>
+<div class="valid-feedback">
                   Mail corretta
                 </div>
-                <div class="invalid-feedback">
+<div class="invalid-feedback">
                   Inserisci una mail corretta
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" required>
-                <div class="invalid-feedback">
+</div>
+<div class="mb-3">
+<label class="form-label" for="exampleInputPassword1">Password:</label>
+<input class="form-control" id="exampleInputPassword1" name="exampleinputpassword1" required="" type="password"/>
+<div class="invalid-feedback">
                   Inserisci una password
                 </div>
-              </div>
-              <button class="btn btn-primary" id="btn-login" type="submit">Accedi</button>
-            </form>
-          </div>
-          <div class="modal-footer d-flex justify-content-center border-0">
-            <p>Non hai un account?</p>
-            <a data-bs-toggle="modal" data-bs-target="#my-modal-register" id="no-account">Registrati ora!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--MODAL-->
-    <div class="modal" tabindex="-1" id="my-modal-register">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header border-0">
-            <h3 class="modal-title text-center me-2 ms-4 ps-5" id="register-title-it">REGISTER TO PLAYPROFIT</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form method="get" action="subscription(noLogin).html" class="g-3 was-validated rounded">
-            <div class="row modal-body d-flex justify-content-center border-0">
-              <div class="text-center mb-3">
+</div>
+<button class="btn btn-primary" id="btn-login" type="submit">Accedi</button>
+</form>
+</div>
+<div class="modal-footer d-flex justify-content-center border-0">
+<p>Non hai un account?</p>
+<a data-bs-target="#my-modal-register" data-bs-toggle="modal" id="no-account">Registrati ora!</a>
+</div>
+</div>
+</div>
+</div>
+<!--MODAL-->
+<div class="modal" id="my-modal-register" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h3 class="modal-title text-center me-2 ms-4 ps-5" id="register-title-it">REGISTER TO PLAYPROFIT</h3>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<form action="subscription(noLogin).html" class="g-3 was-validated rounded" method="get">
+<div class="row modal-body d-flex justify-content-center border-0">
+<div class="text-center mb-3">
                 Become part of our site!</div>
-              <div class="col-6 text-center">
-                <div class="row mb-2"><button href="subscription(noLogin).html" class="btn btn-light fw-bold"><img
-                      src="../img/google.jpg" class="me-3 rounded" id="icons-login">Register with Google</button></div>
-                <div class="row mb-2"><button href="subscription(noLogin).html" class="btn btn-primary fw-bolder"><img
-                      src="../img/facebook.svg" class="me-2" id="icons-login">Register with Facebook</button></div>
-                <div class="row mb-2"><button href="subscription(noLogin).html" class="btn btn-info fw-bolder"><img
-                      src="../img/linkedln.png" class="me-3" id="icons-login">Register with Linkedln</button></div>
-                <div class="row"><button href="subscription(noLogin).html" class="btn btn-danger btn-playprofit"
-                    type="submit"><img src="../img/SHORTLOGO.png" class="me-2" id="icons-login">Register with
+<div class="col-6 text-center">
+<div class="row mb-2"><button class="btn btn-light fw-bold" href="subscription(noLogin).html"><img class="me-3 rounded icons-login" decoding="async" loading="eager" src="../img/google.jpg"/>Register with Google</button></div>
+<div class="row mb-2"><button class="btn btn-primary fw-bolder" href="subscription(noLogin).html"><img class="me-2 icons-login" decoding="async" loading="eager" src="../img/facebook.svg"/>Register with Facebook</button></div>
+<div class="row mb-2"><button class="btn btn-info fw-bolder" href="subscription(noLogin).html"><img class="me-3 icons-login" decoding="async" loading="eager" src="../img/linkedln.png"/>Register with LinkedIn</button></div>
+<div class="row"><button class="btn btn-danger btn-playprofit" href="subscription(noLogin).html" type="submit"><img class="me-2 icons-login" decoding="async" loading="lazy" src="../img/SHORTLOGO.png"/>Register with
                     PlayProfit</button></div>
-              </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center border-0">
-              <div class="container">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                  <label class="form-check-label ms-4" for="invalidCheck">
+</div>
+</div>
+<div class="modal-footer d-flex justify-content-center border-0">
+<div class="container">
+<div class="form-check">
+<input class="form-check-input" id="invalidCheck" name="invalidcheck" required="" type="checkbox" value=""/>
+<label class="form-check-label ms-4" for="invalidCheck">
                     Agree to terms and conditions
                   </label>
-                  <div class="valid-feedback ms-4">
+<div class="valid-feedback ms-4">
                     Ora Ora Ora!
                   </div>
-                  <div class="invalid-feedback ms-4">
+<div class="invalid-feedback ms-4">
                     You must agree before submitting.
                   </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container mt-5 pt-5">
-    <div id="primo-div">
-      <!-- titles -->
-      <h1>GAMES</h1>
-      <h3 class="featured">NEW ARRIVALS </h3>
-
-      <!-- carousel -->
-      <div id="carouselExampleIndicators" id="image" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" class="carusel-indicator" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" class="carusel-indicator" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" class="carusel-indicator" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../img/games/tekken8.jpg" class="d-block w-100 img-fluid rounded" alt="Tekken 8">
-          </div>
-          <div class="carousel-item">
-            <img src="../img/games/mortalkombat1.jpg" class="d-block w-100 img-fluid rounded" alt="Mortal Kombat 1">
-          </div>
-          <div class="carousel-item">
-            <img src="../img/games/helldivers.jpeg" class="d-block w-100 img-fluid rounded" alt="Hell Divers 2">
-          </div>
-          <div class="carousel-item">
-            <img src="../img/games/trackmania.jpg" class="d-block w-100 img-fluid rounded" alt="Trackmania">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <!-- search -->
-      <div class="filters">
-        <div class="container search-code col-6">
-          <form class="d-flex">
-            <input class="input-search" placeholder="Cerca il tuo gioco" aria-label="Search">
-            <div class="dropdown" id="dropdown">
-              <button class="btn dropdown-toggle bi bi-list" data-bs-toggle="dropdown" aria-expanded="false"
-                onclick="changeImg(this)">
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end rounded" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
-                <li><a class="dropdown-item" id="sortZA">Z-A</a></li>
-                <li><a class="dropdown-item" id="sortNew">NEW</a></li>
-                <li><a class="dropdown-item" id="sortFavorite">FAVORITE</a></li>
-              </ul>
-            </div>
-          </form>
-        </div>
-
-        <!-- category switches -->
-        <div class="container  col-8 switches">
-          <h4 type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-            aria-controls="collapseExample"><i class="bi bi-cursor"></i> Category Filters</h4>
-          <div class="row switches collapse" id="collapseExample">
-
-            <!-- Action -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="ActionSwitch">
-                <label class="form-check-label" for="ActionSwitch">
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</header>
+<main class="container mt-5 pt-5">
+<div id="primo-div">
+<!-- titles -->
+<h1>GAMES</h1>
+<h3 class="featured">NEW ARRIVALS </h3>
+<!-- carousel -->
+<div class="carousel slide" data-bs-ride="carousel" id="image">
+<div class="carousel-indicators">
+<button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button>
+<button aria-label="Slide 2" class="carusel-indicator" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button>
+<button aria-label="Slide 3" class="carusel-indicator" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+<button aria-label="Slide 4" class="carusel-indicator" data-bs-slide-to="3" data-bs-target="#carouselExampleIndicators" type="button"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img alt="Tekken 8" class="d-block w-100 img-fluid rounded" decoding="async" loading="lazy" src="../img/games/tekken8.jpg"/>
+</div>
+<div class="carousel-item">
+<img alt="Mortal Kombat 1" class="d-block w-100 img-fluid rounded" decoding="async" loading="lazy" src="../img/games/mortalkombat1.jpg"/>
+</div>
+<div class="carousel-item">
+<img alt="Hell Divers 2" class="d-block w-100 img-fluid rounded" decoding="async" loading="lazy" src="../img/games/helldivers.jpeg"/>
+</div>
+<div class="carousel-item">
+<img alt="Trackmania" class="d-block w-100 img-fluid rounded" decoding="async" loading="lazy" src="../img/games/trackmania.jpg"/>
+</div>
+</div>
+<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button">
+<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button">
+<span aria-hidden="true" class="carousel-control-next-icon"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<!-- search -->
+<div class="filters">
+<div class="container search-code col-6">
+<form class="d-flex">
+<input aria-label="Search" class="input-search" name="text" placeholder="Cerca il tuo gioco"/>
+<div class="dropdown" id="dropdown">
+<button aria-expanded="false" class="btn dropdown-toggle bi bi-list" data-bs-toggle="dropdown" onclick="changeImg(this)">
+</button>
+<ul aria-labelledby="dropdownMenuButton" class="dropdown-menu dropdown-menu-end rounded">
+<li><a class="dropdown-item" id="sortAZ">A-Z</a></li>
+<li><a class="dropdown-item" id="sortZA">Z-A</a></li>
+<li><a class="dropdown-item" id="sortNew">NEW</a></li>
+<li><a class="dropdown-item" id="sortFavorite">FAVORITE</a></li>
+</ul>
+</div>
+</form>
+</div>
+<!-- category switches -->
+<div class="container col-8 switches">
+<h4 aria-controls="collapseExample" aria-expanded="false" data-bs-target="#collapseExample" data-bs-toggle="collapse" type="button"><i class="bi bi-cursor"></i> Category Filters</h4>
+<div class="row switches collapse" id="collapseExample">
+<!-- Action -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="ActionSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="ActionSwitch">
                   Action
                 </label>
-              </div>
-            </div>
-
-            <!-- Adventure -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="AdventureSwitch">
-                <label class="form-check-label" for="AdventureSwitch">
+</div>
+</div>
+<!-- Adventure -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="AdventureSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="AdventureSwitch">
                   Adventure
                 </label>
-              </div>
-            </div>
-
-            <!-- Arcade -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="ArcadeSwitch">
-                <label class="form-check-label" for="ArcadeSwitch">
+</div>
+</div>
+<!-- Arcade -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="ArcadeSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="ArcadeSwitch">
                   Arcade
                 </label>
-              </div>
-            </div>
-
-            <!-- Battle Royale -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="BattleRoyaleSwitch">
-                <label class="form-check-label" for="BattleRoyaleSwitch">
+</div>
+</div>
+<!-- Battle Royale -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="BattleRoyaleSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="BattleRoyaleSwitch">
                   BattleRoyale
                 </label>
-              </div>
-            </div>
-
-            <!-- Co-Op -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="Co-OpSwitch">
-                <label class="form-check-label" for="Co-OpSwitch">
+</div>
+</div>
+<!-- Co-Op -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="Co-OpSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="Co-OpSwitch">
                   Co-Op
                 </label>
-              </div>
-            </div>
-
-            <!-- Competitive -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="CompetitiveSwitch">
-                <label class="form-check-label" for="CompetitiveSwitch">
+</div>
+</div>
+<!-- Competitive -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="CompetitiveSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="CompetitiveSwitch">
                   Competitive
                 </label>
-              </div>
-            </div>
-
-            <!-- Crime -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="CrimeSwitch">
-                <label class="form-check-label" for="CrimeSwitch">
+</div>
+</div>
+<!-- Crime -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="CrimeSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="CrimeSwitch">
                   Crime
                 </label>
-              </div>
-            </div>
-
-            <!-- eSport -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="eSportSwitch">
-                <label class="form-check-label" for="eSportSwitch">
+</div>
+</div>
+<!-- eSport -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="eSportSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="eSportSwitch">
                   eSport
                 </label>
-              </div>
-            </div>
-
-            <!-- Fighting -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="FightingSwitch">
-                <label class="form-check-label" for="FightingSwitch">
+</div>
+</div>
+<!-- Fighting -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="FightingSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="FightingSwitch">
                   Fighting
                 </label>
-              </div>
-            </div>
-
-            <!-- FPS -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="FPSSwitch">
-                <label class="form-check-label" for="FPSSwitch">
+</div>
+</div>
+<!-- FPS -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="FPSSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="FPSSwitch">
                   FPS
                 </label>
-              </div>
-            </div>
-
-            <!-- Horror -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="HorrorSwitch">
-                <label class="form-check-label" for="HorrorSwitch">
+</div>
+</div>
+<!-- Horror -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="HorrorSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="HorrorSwitch">
                   Horror
                 </label>
-              </div>
-            </div>
-
-            <!-- Hunt -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="HuntSwitch">
-                <label class="form-check-label" for="HuntSwitch">
+</div>
+</div>
+<!-- Hunt -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="HuntSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="HuntSwitch">
                   Hunt
                 </label>
-              </div>
-            </div>
-
-            <!-- Indie -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="IndieSwitch">
-                <label class="form-check-label" for="IndieSwitch">
+</div>
+</div>
+<!-- Indie -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="IndieSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="IndieSwitch">
                   Indie
                 </label>
-              </div>
-            </div>
-
-            <!-- Moba -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="MobaSwitch">
-                <label class="form-check-label" for="MobaSwitch">
+</div>
+</div>
+<!-- Moba -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="MobaSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="MobaSwitch">
                   Moba
                 </label>
-              </div>
-            </div>
-
-            <!-- Multiplayer -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="MultiplayerSwitch">
-                <label class="form-check-label" for="MultiplayerSwitch">
+</div>
+</div>
+<!-- Multiplayer -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="MultiplayerSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="MultiplayerSwitch">
                   Multiplayer
                 </label>
-              </div>
-            </div>
-
-            <!-- PvE -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="PvESwitch">
-                <label class="form-check-label" for="PvESwitch">
+</div>
+</div>
+<!-- PvE -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="PvESwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="PvESwitch">
                   PvE
                 </label>
-              </div>
-            </div>
-
-            <!-- PvP -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="PvPSwitch">
-                <label class="form-check-label" for="PvPSwitch">
+</div>
+</div>
+<!-- PvP -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="PvPSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="PvPSwitch">
                   PvP
                 </label>
-              </div>
-            </div>
-
-            <!-- Racing -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="RacingSwitch">
-                <label class="form-check-label" for="RacingSwitch">
+</div>
+</div>
+<!-- Racing -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="RacingSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="RacingSwitch">
                   Racing
                 </label>
-              </div>
-            </div>
-
-            <!-- RPG -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="RPGSwitch">
-                <label class="form-check-label" for="RPGSwitch">
+</div>
+</div>
+<!-- RPG -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="RPGSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="RPGSwitch">
                   RPG
                 </label>
-              </div>
-            </div>
-
-            <!-- SandBox -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="SandBoxSwitch">
-                <label class="form-check-label" for="SandBoxSwitch">
+</div>
+</div>
+<!-- SandBox -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="SandBoxSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="SandBoxSwitch">
                   SandBox
                 </label>
-              </div>
-            </div>
-
-            <!-- Sci-Fi -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="Sci-FiSwitch">
-                <label class="form-check-label" for="Sci-FiSwitch">
+</div>
+</div>
+<!-- Sci-Fi -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="Sci-FiSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="Sci-FiSwitch">
                   Sci-Fi
                 </label>
-              </div>
-            </div>
-
-            <!-- Singleplayer -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="SingleplayerSwitch">
-                <label class="form-check-label" for="SingleplayerSwitch">
+</div>
+</div>
+<!-- Singleplayer -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="SingleplayerSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="SingleplayerSwitch">
                   Singleplayer
                 </label>
-              </div>
-            </div>
-
-            <!-- Stealth -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="StealthSwitch">
-                <label class="form-check-label" for="StealthSwitch">
+</div>
+</div>
+<!-- Stealth -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="StealthSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="StealthSwitch">
                   Stealth
                 </label>
-              </div>
-            </div>
-
-            <!-- Strategy -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="StrategySwitch">
-                <label class="form-check-label" for="StrategySwitch">
+</div>
+</div>
+<!-- Strategy -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="StrategySwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="StrategySwitch">
                   Strategy
                 </label>
-              </div>
-            </div>
-
-            <!-- Team -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value="" id="TeamSwitch">
-                <label class="form-check-label" for="TeamSwitch">
+</div>
+</div>
+<!-- Team -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="TeamSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="TeamSwitch">
                   Team
                 </label>
-              </div>
-            </div>
-
-            <!-- Third-Person-Shooter -->
-            <div class="col-4">
-              <div class="form-check form-switch">
-                <input class="form-check-input category-switch" type="checkbox" value=""
-                  id="Third-Person-ShooterSwitch">
-                <label class="form-check-label" for="Third-Person-ShooterSwitch">
+</div>
+</div>
+<!-- Third-Person-Shooter -->
+<div class="col-4">
+<div class="form-check form-switch">
+<input class="form-check-input category-switch" id="Third-Person-ShooterSwitch" type="checkbox" value=""/>
+<label class="form-check-label" for="Third-Person-ShooterSwitch">
                   Third-Person-Shooter
                 </label>
-              </div>
-            </div>
-
-            <!-- Add more switches here -->
-          </div>
-        </div>
-      </div>
-
-      <!-- games -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 games-folder" id="favoritesContainer">
-            <!-- Game 1: Tekken 8 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Tekken8" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasTekken8" >Tekken 8<span class="badge new text-bg-danger">New</span>
+</div>
+</div>
+<!-- Add more switches here -->
+</div>
+</div>
+</div>
+<!-- games -->
+<div class="container">
+<div class="row">
+<div class="col-md-6 games-folder" id="favoritesContainer">
+<!-- Game 1: Tekken 8 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasTekken8" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Tekken8">Tekken 8<span class="badge new text-bg-danger">New</span>
+</h3>
+</div>
+<div class="category">
+<p>Fighting</p>
+<p>Action</p>
+<p>Multiplayer</p>
+<p>Arcade</p>
+</div>
+</div>
+<!-- Game 2: Mortal Kombat 1 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasMortalKombat1" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="MortalKombat1">Mortal Kombat 1<span class="badge new text-bg-danger">New</span>
+</h3>
+</div>
+<div class="category">
+<p>Fighting</p>
+<p>Action</p>
+<p>Multiplayer</p>
+<p>Arcade</p>
+</div>
+</div>
+<!-- Game 3: HellDivers 2 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasHellDivers2" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Helldivers2">HellDivers 2<span class="badge new text-bg-danger">New</span>
+</h3>
+</div>
+<div class="category">
+<p>Third-Person-Shooter</p>
+<p>Action</p>
+<p>Co-Op</p>
+<p>PvE</p>
+</div>
+</div>
+<!-- Game 4: Trackmania -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasTrackmania" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Trackmania">Trackmania<span class="badge new text-bg-danger">New</span></h3>
+</div>
+<div class="category">
+<p>Racing</p>
+<p>Singleplayer</p>
+<p>Multiplayer</p>
+<p>eSport</p>
+</div>
+</div>
+<!-- Game 5: Fortnite -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasFortnite" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Fortnite">Fortnite</h3>
+</div>
+<div class="category">
+<p>Third-Person-Shooter</p>
+<p>Action</p>
+<p>Co-Op</p>
+<p>Multiplayer</p>
+<p>PvP</p>
+<p>PvE</p>
+<p>BattleRoyale</p>
+</div>
+</div>
+<!-- Game 6: Minecraft -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasMinecraft" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Minecraft">Minecraft</h3>
+</div>
+<div class="category">
+<p>Indie</p>
+<p>Survival</p>
+<p>Singleplayer</p>
+<p>Multiplayer</p>
+<p>SandBox</p>
+</div>
+</div>
+<!-- Game 7: Valorant -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasValorant" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Valorant">Valorant</h3>
+</div>
+<div class="category">
+<p>FPS</p>
+<p>eSport</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+</div>
+</div>
+<!-- Game 8: Counter-Strike: Global Offensive (CS:GO) -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasCSGO" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Counter-Strike:GlobalOffensive(CS:GO)">Counter-Strike:Global Offensive (CS:GO)
                 </h3>
-              </div>
-              <div class="category">
-                <p>Fighting</p>
-                <p>Action</p>
-                <p>Multiplayer</p>
-                <p>Arcade</p>
-              </div>
-            </div>
-
-            <!-- Game 2: Mortal Kombat 1 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="MortalKombat1" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasMortalKombat1">Mortal Kombat 1<span
-                    class="badge new text-bg-danger">New</span>
+</div>
+<div class="category">
+<p>FPS</p>
+<p>eSport</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+</div>
+</div>
+<!-- Game 9: Call of Duty: Warzone -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasWarzone" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="CallofDuty:Warzone">Call ofDuty: Warzone</h3>
+</div>
+<div class="category">
+<p>FPS</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+<p>BattleRoyale</p>
+</div>
+</div>
+<!-- Game 10: Fall Guys: Ultimate Knockout -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasFallGuys" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="FalGuys:UltimateKnockout">Fall Guys: Ultimate Knockout</h3>
+</div>
+<div class="category">
+<p>Race</p>
+<p>Team</p>
+<p>Multiplayer</p>
+<p>Hunt</p>
+</div>
+</div>
+<!-- Game 11: Apex Legends -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasApexLegends" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="ApexLegends">Apex Legends</h3>
+</div>
+<div class="category">
+<p>FPS</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+<p>BattleRoyale</p>
+</div>
+</div>
+<!-- Game 12: League of Legends -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasLeagueOfLegends" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="LeagueofLegends">League of Legends</h3>
+</div>
+<div class="category">
+<p>Moba</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+<p>Strategy</p>
+</div>
+</div>
+<!-- Game 13: Rocket League -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasRocketLeague" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="RocketLeague">Rocket League</h3>
+</div>
+<div class="category">
+<p>Racing</p>
+<p>Competitive</p>
+<p>Multiplayer</p>
+<p>eSport</p>
+</div>
+</div>
+<!-- Game 14: Lethat Company -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasLethatCompany" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="LethalCompany">Lethat Company</h3>
+</div>
+<div class="category">
+<p>Horror</p>
+<p>Action</p>
+<p>Multiplayer</p>
+<p>Co-Op</p>
+<p>PvE</p>
+</div>
+</div>
+<!-- Game 15: Forza Horizon 5 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasForzaHorizon5" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="ForzaHorizon5">Forza Horizon 5</h3>
+</div>
+<div class="category">
+<p>Racing</p>
+<p>Simulator</p>
+<p>Multiplayer</p>
+<p>Competitive</p>
+<p>eSport</p>
+<p>OpenWorld</p>
+</div>
+</div>
+<!-- Game 16: Forza Horizon 4 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasForzaHorizon4" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="ForzaHorizon4">Forza Horizon 4</h3>
+</div>
+<div class="category">
+<p>Racing</p>
+<p>Simulator</p>
+<p>Multiplayer</p>
+<p>Competitive</p>
+<p>eSport</p>
+<p>OpenWorld</p>
+</div>
+</div>
+<!-- Game 17: Ark -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasArk" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Ark">Ark
                 </h3>
-              </div>
-              <div class="category">
-                <p>Fighting</p>
-                <p>Action</p>
-                <p>Multiplayer</p>
-                <p>Arcade</p>
-              </div>
-            </div>
-
-            <!-- Game 3: HellDivers 2 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Helldivers2" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasHellDivers2">HellDivers 2<span class="badge new text-bg-danger">New</span>
-                </h3>
-              </div>
-              <div class="category">
-                <p>Third-Person-Shooter</p>
-                <p>Action</p>
-                <p>Co-Op</p>
-                <p>PvE</p>
-              </div>
-            </div>
-
-            <!-- Game 4: Trackmania -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Trackmania" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasTrackmania">Trackmania<span class="badge new text-bg-danger">New</span></h3>
-              </div>
-              <div class="category">
-                <p>Racing</p>
-                <p>Singleplayer</p>
-                <p>Multiplayer</p>
-                <p>eSport</p>
-              </div>
-            </div>
-
-            <!-- Game 5: Fortnite -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Fortnite" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasFortnite">Fortnite</h3>
-              </div>
-              <div class="category">
-                <p>Third-Person-Shooter</p>
-                <p>Action</p>
-                <p>Co-Op</p>
-                <p>Multiplayer</p>
-                <p>PvP</p>
-                <p>PvE</p>
-                <p>BattleRoyale</p>
-              </div>
-            </div>
-
-            <!-- Game 6: Minecraft -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Minecraft" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasMinecraft">Minecraft</h3>
-              </div>
-              <div class="category">
-                <p>Indie</p>
-                <p>Survival</p>
-                <p>Singleplayer</p>
-                <p>Multiplayer</p>
-                <p>SandBox</p>
-              </div>
-            </div>
-
-            <!-- Game 7: Valorant -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Valorant" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasValorant">Valorant</h3>
-              </div>
-              <div class="category">
-                <p>FPS</p>
-                <p>eSport</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-              </div>
-            </div>
-
-            <!-- Game 8: Counter-Strike: Global Offensive (CS:GO) -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Counter-Strike:GlobalOffensive(CS:GO)" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasCSGO">Counter-Strike:Global Offensive (CS:GO)
-                </h3>
-              </div>
-              <div class="category">
-                <p>FPS</p>
-                <p>eSport</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-              </div>
-            </div>
-
-            <!-- Game 9: Call of Duty: Warzone -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="CallofDuty:Warzone" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasWarzone">Call ofDuty: Warzone</h3>
-              </div>
-              <div class="category">
-                <p>FPS</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-                <p>BattleRoyale</p>
-              </div>
-            </div>
-
-            <!-- Game 10: Fall Guys: Ultimate Knockout -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="FalGuys:UltimateKnockout" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasFallGuys">Fall Guys: Ultimate Knockout</h3>
-              </div>
-              <div class="category">
-                <p>Race</p>
-                <p>Team</p>
-                <p>Multiplayer</p>
-                <p>Hunt</p>
-              </div>
-            </div>
-
-            <!-- Game 11: Apex Legends -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="ApexLegends" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasApexLegends">Apex Legends</h3>
-              </div>
-              <div class="category">
-                <p>FPS</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-                <p>BattleRoyale</p>
-              </div>
-            </div>
-
-            <!-- Game 12: League of Legends -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="LeagueofLegends" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasLeagueOfLegends">League of Legends</h3>
-              </div>
-              <div class="category">
-                <p>Moba</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-                <p>Strategy</p>
-              </div>
-            </div>
-
-            <!-- Game 13: Rocket League -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="RocketLeague" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasRocketLeague">Rocket League</h3>
-              </div>
-              <div class="category">
-                <p>Racing</p>
-                <p>Competitive</p>
-                <p>Multiplayer</p>
-                <p>eSport</p>
-              </div>
-            </div>
-
-            <!-- Game 14: Lethat Company -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="LethalCompany" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasLethatCompany">Lethat Company</h3>
-              </div>
-              <div class="category">
-                <p>Horror</p>
-                <p>Action</p>
-                <p>Multiplayer</p>
-                <p>Co-Op</p>
-                <p>PvE</p>
-              </div>
-            </div>
-
-            <!-- Game 15: Forza Horizon 5 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="ForzaHorizon5" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasForzaHorizon5">Forza Horizon 5</h3>
-              </div>
-              <div class="category">
-                <p>Racing</p>
-                <p>Simulator</p>
-                <p>Multiplayer</p>
-                <p>Competitive</p>
-                <p>eSport</p>
-                <p>OpenWorld</p>
-              </div>
-            </div>
-
-            <!-- Game 16: Forza Horizon 4 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="ForzaHorizon4" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasForzaHorizon4">Forza Horizon 4</h3>
-              </div>
-              <div class="category">
-                <p>Racing</p>
-                <p>Simulator</p>
-                <p>Multiplayer</p>
-                <p>Competitive</p>
-                <p>eSport</p>
-                <p>OpenWorld</p>
-              </div>
-            </div>
-
-            <!-- Game 17: Ark -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Ark" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasArk">Ark
-                </h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Survival</p>
-                <p>Multiplayer</p>
-                <p>OpenWorld</p>
-              </div>
-            </div>
-
-            <!-- Game 18: GTA V -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="GTAV" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasGTA5">
+</div>
+<div class="category">
+<p>Action</p>
+<p>Survival</p>
+<p>Multiplayer</p>
+<p>OpenWorld</p>
+</div>
+</div>
+<!-- Game 18: GTA V -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasGTA5" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="GTAV">
                   GTA V</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>OpenWorld</p>
-                <p>Multiplayer</p>
-                <p>Crime</p>
-              </div>
-            </div>
-
-            <!-- Game 19: Dead by Daylight -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="DeadbyDaylight" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasDeadByDaylight">Dead by Daylight</h3>
-              </div>
-              <div class="category">
-                <p>Horror</p>
-                <p>Action</p>
-                <p>Multiplayer</p>
-                <p>Survival</p>
-                <p>Co-Op</p>
-              </div>
-            </div>
-
-            <!-- Game 20: Halo -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Halo" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasHalo">
+</div>
+<div class="category">
+<p>Action</p>
+<p>OpenWorld</p>
+<p>Multiplayer</p>
+<p>Crime</p>
+</div>
+</div>
+<!-- Game 19: Dead by Daylight -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasDeadByDaylight" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="DeadbyDaylight">Dead by Daylight</h3>
+</div>
+<div class="category">
+<p>Horror</p>
+<p>Action</p>
+<p>Multiplayer</p>
+<p>Survival</p>
+<p>Co-Op</p>
+</div>
+</div>
+<!-- Game 20: Halo -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasHalo" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Halo">
                   Halo</h3>
-              </div>
-              <div class="category">
-                <p>Sci-Fi</p>
-                <p>Action</p>
-                <p>Shooter</p>
-                <p>Multiplayer</p>
-              </div>
-            </div>
-
-            <!-- Game 21: Destiny 2 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Destiny2" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasDestiny2">Destiny 2</h3>
-              </div>
-              <div class="category">
-                <p>Sci-Fi</p>
-                <p>Action</p>
-                <p>Multiplayer</p>
-                <p>Third-Person-Shooter</p>
-              </div>
-            </div>
-
-            <!-- Game 22: Multiversus -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Multiversus" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasMultiversus">Multiversus</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Fighting</p>
-                <p>Multiplayer</p>
-              </div>
-            </div>
-
-            <!-- Game 23: Moto GP 2024 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="MotoGP2024" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasMotoGP2024">Moto GP 2024</h3>
-              </div>
-              <div class="category">
-                <p>Racing</p>
-                <p>Simulation</p>
-                <p>Singleplayer</p>
-                <p>eSport</p>
-                <p>Competitive</p>
-              </div>
-            </div>
-
-            <!-- Game 24: Assassin's Creed Valhalla -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="AssassinsCreedValhalla" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasAssassinsCreedValhalla">
+</div>
+<div class="category">
+<p>Sci-Fi</p>
+<p>Action</p>
+<p>Shooter</p>
+<p>Multiplayer</p>
+</div>
+</div>
+<!-- Game 21: Destiny 2 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasDestiny2" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Destiny2">Destiny 2</h3>
+</div>
+<div class="category">
+<p>Sci-Fi</p>
+<p>Action</p>
+<p>Multiplayer</p>
+<p>Third-Person-Shooter</p>
+</div>
+</div>
+<!-- Game 22: Multiversus -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasMultiversus" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Multiversus">Multiversus</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>Fighting</p>
+<p>Multiplayer</p>
+</div>
+</div>
+<!-- Game 23: Moto GP 2024 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasMotoGP2024" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="MotoGP2024">Moto GP 2024</h3>
+</div>
+<div class="category">
+<p>Racing</p>
+<p>Simulation</p>
+<p>Singleplayer</p>
+<p>eSport</p>
+<p>Competitive</p>
+</div>
+</div>
+<!-- Game 24: Assassin's Creed Valhalla -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasAssassinsCreedValhalla" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="AssassinsCreedValhalla">
                   Assassin's Creed Valhalla</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>OpenWorld</p>
-                <p>Stealth</p>
-                <p>RPG</p>
-                <p>Adventure</p>
-              </div>
-            </div>
-
-            <!-- Game 25: Metal Gear Solid V: The Phantom Pain -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="MetalGearSolidV:ThePhantomPain" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasMetalGearSolidV">Metal Gear Solid
+</div>
+<div class="category">
+<p>Action</p>
+<p>OpenWorld</p>
+<p>Stealth</p>
+<p>RPG</p>
+<p>Adventure</p>
+</div>
+</div>
+<!-- Game 25: Metal Gear Solid V: The Phantom Pain -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasMetalGearSolidV" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="MetalGearSolidV:ThePhantomPain">Metal Gear Solid
                   V: The Phantom Pain</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Stealth</p>
-                <p>Adventure</p>
-              </div>
-            </div>
-
-            <!-- Game 26: Hitman 3 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Hitman3" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasHitman3">Hitman 3</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Stealth</p>
-              </div>
-            </div>
-
-            <!-- Game 27: Dishonored 2 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Dishonored2" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasDishonored2">Dishonored 2</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Stealth</p>
-                <p>Adventure</p>
-              </div>
-            </div>
-
-            <!-- Game 28: Deus Ex: Mankind Divided -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="DeusEx:MankindDivided" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasDeusExMankindDivided">Deus Ex:
+</div>
+<div class="category">
+<p>Action</p>
+<p>Stealth</p>
+<p>Adventure</p>
+</div>
+</div>
+<!-- Game 26: Hitman 3 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasHitman3" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Hitman3">Hitman 3</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>Stealth</p>
+</div>
+</div>
+<!-- Game 27: Dishonored 2 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasDishonored2" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Dishonored2">Dishonored 2</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>Stealth</p>
+<p>Adventure</p>
+</div>
+</div>
+<!-- Game 28: Deus Ex: Mankind Divided -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasDeusExMankindDivided" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="DeusEx:MankindDivided">Deus Ex:
                   Mankind Divided</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>RPG</p>
-                <p>Stealth</p>
-              </div>
-            </div>
-
-            <!-- Game 29: Far Cry 5 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="offcanvasFarCry5" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasFarCry5">Far Cry 5</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>OpenWorld</p>
-                <p>Adventure</p>
-                <p>Crime</p>
-              </div>
-            </div>
-
-            <!-- Game 30: Tom Clancy's Ghost Recon Wildlands -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="TomClancysGhostReconWildlands" data-bs-toggle="modal" data-bs-target="#my-modal-register" aria-controls="offcanvasGhostReconWildlands">Tom
+</div>
+<div class="category">
+<p>Action</p>
+<p>RPG</p>
+<p>Stealth</p>
+</div>
+</div>
+<!-- Game 29: Far Cry 5 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasFarCry5" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="offcanvasFarCry5">Far Cry 5</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>OpenWorld</p>
+<p>Adventure</p>
+<p>Crime</p>
+</div>
+</div>
+<!-- Game 30: Tom Clancy's Ghost Recon Wildlands -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasGhostReconWildlands" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="TomClancysGhostReconWildlands">Tom
                   Clancy's Ghost Recon Wildlands</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>OpenWorld</p>
-              </div>
-            </div>
-
-            <!-- Game 31: Watch Dogs: Legion -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="WatchDogs:Legion" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasWatchDogsLegion">Watch Dogs: Legion</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>OpenWorld</p>
-                <p>Adventure</p>
-                <p>Crime</p>
-              </div>
-            </div>
-
-            <!-- Game 32: Batman: Arkham Knight -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Batman:ArkhamKnight" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasBatmanArkhamKnight">Batman: Arkham Knight</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>Stealth</p>
-                <p>Adventure</p>
-              </div>
-            </div>
-
-            <!-- Game 33: Borderlands 3 -->
-            <div class="game">
-              <div class="game-title">
-                <h3 id="Borderlands3" data-bs-toggle="modal" data-bs-target="#my-modal-register"
-                  aria-controls="offcanvasBorderlands3">Borderlands 3</h3>
-              </div>
-              <div class="category">
-                <p>Action</p>
-                <p>RPG</p>
-                <p>Co-Op</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="secondo-div">
-      
-    </div>
-  </main>
-
-  <footer>
-    <button class="btn position-fixed bottom-0 end-0" id="themeToggler"><i class="bi bi-sun d-none" id="sun"></i>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill"
-        id="moon" viewBox="0 0 16 16">
-        <path
-          d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
-      </svg>
-    </button>
-    <div class="text-center mb-3 me-5 position-fixed bottom-0 end-0 dropdown" id="dropdown-language">
-      <a class="row nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="en-it">
-        <i class="bi bi-globe"></i>
-        <span class="m-0 p-0" id="language_p">IT</span>
-        <i class="bi bi-caret-down-fill"></i>
-      </a>
-      <ul class="dropdown-menu" id="dropdown-menu-language">
-        <li><button class="p dropdown-item" onclick="italianFunction()">
+</div>
+<div class="category">
+<p>Action</p>
+<p>OpenWorld</p>
+</div>
+</div>
+<!-- Game 31: Watch Dogs: Legion -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasWatchDogsLegion" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="WatchDogs:Legion">Watch Dogs: Legion</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>OpenWorld</p>
+<p>Adventure</p>
+<p>Crime</p>
+</div>
+</div>
+<!-- Game 32: Batman: Arkham Knight -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasBatmanArkhamKnight" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Batman:ArkhamKnight">Batman: Arkham Knight</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>Stealth</p>
+<p>Adventure</p>
+</div>
+</div>
+<!-- Game 33: Borderlands 3 -->
+<div class="game">
+<div class="game-title">
+<h3 aria-controls="offcanvasBorderlands3" data-bs-target="#my-modal-register" data-bs-toggle="modal" id="Borderlands3">Borderlands 3</h3>
+</div>
+<div class="category">
+<p>Action</p>
+<p>RPG</p>
+<p>Co-Op</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="secondo-div">
+</div>
+</main>
+<footer>
+<button class="btn position-fixed bottom-0 end-0" id="themeToggler"><i class="bi bi-sun d-none" id="sun"></i>
+<svg class="bi bi-moon-fill" fill="currentColor" height="16" id="moon" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"></path>
+</svg>
+</button>
+<div class="text-center mb-3 me-5 position-fixed bottom-0 end-0 dropdown" id="dropdown-language">
+<a aria-expanded="false" class="row nav-link" data-bs-toggle="dropdown" href="#" id="en-it" role="button">
+<i class="bi bi-globe"></i>
+<span class="m-0 p-0" id="language_p">IT</span>
+<i class="bi bi-caret-down-fill"></i>
+</a>
+<ul class="dropdown-menu" id="dropdown-menu-language">
+<li><button class="p dropdown-item" onclick="italianFunction()">
             ITALIANO
             •
             IT
           </button></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><button class="p dropdown-item" onclick="englishFunction()">
+<li>
+<hr class="dropdown-divider"/>
+</li>
+<li><button class="p dropdown-item" onclick="englishFunction()">
             ENGLISH
             •
             EN
           </button></li>
-      </ul>
-    </div>
-    <div class="container">
-      <img src="../img/FULLLOGO.png" class="img-fluid col-3 col-lg-2">
-      <div class="row">
-        <div>2024 © PlayProfit</div>
-        <div>Ahmed Dere Omar & Lukas Fossati</div>
-        <div>3^F I.I.S. G. Vallauri - Fossano</div>
-      </div>
-      <ul class="row list-unstyled mt-3">
-        <li class="col-6 col-lg-1"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#my-modal-login"
-            aria-current="page">Login</a></li>
-        <li class="col-6 col-lg-1"><a class="nav-link" href="#" data-bs-toggle="modal"
-            data-bs-target="#my-modal-register" aria-current="page">Register</a></li>
-        <li class="col-6 col-lg-1 mb-3"><a class="nav-link" href="help(noLogin).html" aria-current="page">Help</a></li>
-      </ul>
-  </footer>
+</ul>
+</div>
+<div class="container">
+<img class="img-fluid col-3 col-lg-2" decoding="async" loading="lazy" src="../img/FULLLOGO.png"/>
+<div class="row">
+<div data-current-year=""></div>
+<div>Ahmed Dere Omar &amp; Lukas Fossati</div>
+<div>3^F I.I.S. G. Vallauri - Fossano</div>
+</div>
+<ul class="row list-unstyled mt-3">
+<li class="col-6 col-lg-1"><a aria-current="page" class="nav-link" data-bs-target="#my-modal-login" data-bs-toggle="modal" href="#">Login</a></li>
+<li class="col-6 col-lg-1"><a aria-current="page" class="nav-link" data-bs-target="#my-modal-register" data-bs-toggle="modal" href="#">Register</a></li>
+<li class="col-6 col-lg-1 mb-3"><a aria-current="page" class="nav-link" href="help(noLogin).html">Help</a></li>
+</ul>
+</div></footer>
 </body>
-
 </html>
